@@ -15,6 +15,7 @@
 
         .component {
             border: 2px solid rgb(116, 17, 93);
+            min-height: 4rem;
         }
     </style>
 
@@ -48,7 +49,7 @@
     </section>
 
     <!-- Configurar el ancho de las columnas -->
-     <section class="container mt-3">
+     <section class="container mt-3 text-center bg-black text-light">
         <div class="row">
             <div class="col-3 component">col-3</div>
             <div class="col">col-9</div>
@@ -60,8 +61,31 @@
             <div class="col-6 component">col-6</div>
             <div class="col-3 component">col-3</div>
          </div>
+
+         <!-- cuando se superan las 12 columnas, las siguientes columnas muestra la
+         apariencia de ser una fila -->
+         <div class="row justify-content-center">
+            <div class="col-8 component">col-8</div>
+            <div class="col-10 component">col-10</div>
+            <div class="col-11 component">col-11</div>
+         </div>
      </section>
 
+     <!-- Solución del ejercicio -->
+      <section class="container mt-3">
+        <div class="row">
+            <div class="col-12 component bg-success">col-12</div>
+        </div>
+        <div class="row">
+            <div class="col-6 component bg-success">col-6</div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 component bg-info">col-12</div>
+                    <div class="col-12 component bg-info">col-12</div>
+                </div>
+            </div>
+        </div>
+      </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
