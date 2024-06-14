@@ -87,3 +87,36 @@ console.log( `MAX_SAFE_INTEGER + 5: ${Number.MAX_SAFE_INTEGER + 5 }`);
 const myBigInt = 9007199254740991n;
 console.log( typeof myBigInt ); // bigint
 console.log( `Resultado de myBigInt + 1n: ${ myBigInt + 1n }  `); // 9007199254740992n
+
+/*
+ Tipo de dato undefined
+  - Una variable que es declarada, pero el tipo de datos
+   no es definido.
+*/
+
+let myName;
+
+console.log( typeof myName ); // "undefined"
+
+/*
+ Tipo de dato null
+  - Una variable que intensionalmente se borra el tipo de dato
+
+  */
+ let myAge;
+ console.log(`Tipo de dato en myAge ${ typeof myAge}`); // undefied
+ myAge = 20;
+ console.log(`Tipo de dato en myAge ${ typeof myAge}`); // number
+ myAge = null; //intensionalmente se borra el tipo de dato
+ 
+ // NO es correcto usar typeof con un dato null
+ console.log(`Tipo de dato en myAge ${ typeof myAge}`); // object 
+ console.log(`myAge es null?  ${ myAge === null } `);// true
+
+ /*
+ Tipo de dato boolean
+ Tiene dos estados: true y false
+
+ */
+ const isActive = true;
+ 
