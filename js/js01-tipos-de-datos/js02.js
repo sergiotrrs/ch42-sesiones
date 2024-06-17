@@ -110,3 +110,30 @@ const calcularImpuesto = (valor, impuesto) => valor*impuesto;
 
 // caso de uso:
 console.log( `El impuesto de los calcetines es: ${calcularImpuesto(100, .16 ) }`); // 16
+
+// ==================================================================
+// Ejercicios: Convertir las siguientes funciones a Arrow functions.
+
+/** Función 1: Sumar dos números */
+function sumar(a, b) {
+    return a + b;
+}
+console.log( `La suma de 100 + 5 = ${sumar(100,5)}`); // 105
+
+/** Función 2: Verificar si un número es par */
+function esPar(num) {
+    return num % 2 === 0;
+}
+
+console.log( `El número 18 es par? ${esPar(18)}`); // true
+console.log( `El número 23 es par? ${esPar(23)}`); // false
+
+/** Función 3: Verificar si tres números terminan con el mismo dígito */
+function mismosUltimosDigitos(num1, num2, num3) {
+    const ultimoDigito1 = num1 % 10;
+    const ultimoDigito2 = num2 % 10;
+    const ultimoDigito3 = num3 % 10;
+    return ultimoDigito1 === ultimoDigito2 && ultimoDigito1 === ultimoDigito3;
+}
+
+console.log(`El num. 23, 203 y 1013 terminan en 3? ${mismosUltimosDigitos(23,203,1013)}`);
