@@ -185,8 +185,39 @@ console.log( Boolean("0")); // true
 console.log( Boolean( Number("0")) ); // false
           // Boolean( 0 );
 
+// Resumen:
+
+// Number()
+// [] (empty array) -> 0, [30]-> 30, [30,30]->NaN, false-> 0, true-> 1
+
+// String()
+// [] -> "", [12,2]->"12,2", function(){}-> "function(){}"
+// {} ->"[object,object]", {clave:valor, age:17} ->"[object,object]"
+
+// Para convertir un obejeto a string, la forma correcta es usar
+// el método JSON.stringyfy( objeto );
 
 
 
+console.log(   2 < 10    ); // true
+console.log(  "22" < 10 ); // false
+         //    22  < 10
+// Cuando los dos operandos sean string, se evalua cada caracter
+// por su posición en la tabla unicode. Se compara el primer caracter del op1
+// con el primer caracter del op2, si son iguales se continua con el segundo operando        
+console.log(  "22" > "3"  );  // false 
+        //    50   >  51   
+console.log(  "221" > "24" ); // false
+        //     50("2") >  52("4")
+
+console.log(  "Mar" > "Dulce" ); // true
+        //     77   >   68
+console.log(  "Mar" > "Maricela" ); // false
+
+console.log(  "marbe" > "Maricela" ); // true
+       //      m > M
+console.log(  "marbe".toLowerCase() > "Maricela".toLowerCase() );
+      //       b > i     false
+      //      98 > 105   false
 
 
