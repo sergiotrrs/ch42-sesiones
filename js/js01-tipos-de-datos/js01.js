@@ -120,3 +120,73 @@ console.log( typeof myName ); // "undefined"
  */
  const isActive = true;
  
+ // --------------------------------------------------------------
+ /*
+   Conversion explícita de datos (coerción de tipo)
+
+ */
+// Conversión a String
+const edadMascota = 10; // number
+// Conversion implícita
+console.log("Edad de mi mascota " + edadMascota); // "Edad de mi mascota: 10"
+// Conversión explícita
+const edadMascotaString = String( edadMascota ); // "10"
+                                               // "Edad de mi mascota en String 10"
+console.log("Edad de mi mascota en String " + edadMascotaString ); 
+
+// Conversión a number
+const costo = "100";
+// Conversión implícita
+const costoConIVA = costo * 1.16; // 116.00
+
+// Conversión explícita
+const precioCroquetas = "1000.50"; // string
+const precioJabon = "25"; // string
+const precioPapel = "40"; // string
+const precioPapelNumber = parseInt(precioPapel); // 40 (number)
+console.log( typeof (precioPapel ), typeof(precioPapelNumber) ); // string, number
+
+const total = precioCroquetas + precioJabon + precioPapel; // 1000.502540 (string)
+
+const totalCorrecto = parseFloat( precioCroquetas ) + parseInt( precioJabon )  //(number)
+                      + Number(precioPapel);
+
+/*
+ Number() Vs parseInt()
+  - Number convierte enteros y decimales
+  - parseInt convierte solo pa larte entera
+*/
+console.log( parseInt("10.456")); // 10
+console.log( parseFloat("10.456")); // 10.456
+console.log( Number("10.456")); // 10.456
+// - Number devuelve NaN si la cadena contiene algùn catacter no numérico
+// - parseInt y parseFlotat realiza la conversión hasta encontrar un caracter
+//   no numérico
+// - con parseInt y parseFloat, si la entrada comienza con un valor no numérico
+//   devuelve NaN
+console.log( parseInt("10-25")); // 10
+console.log( Number("10-25")); // NaN
+
+// Para convertir un tipo boolean a number se debe utilizar Number()
+console.log( Number( true )); // 1
+console.log( Number( false )); // 0
+console.log( parseInt( true )); // NaN
+
+// Conversión a tipo boolean
+// En la conversión a boolean los siguientes valores son false:
+// ""(empty string), 0, null, undefined
+console.log( Boolean(1) ); // true 
+console.log( Boolean(1000) ); // true 
+console.log( Boolean(-1000) ); // true
+console.log( Boolean("Ya mero terminamos, me duele la cabeza") ); // true
+console.log( Boolean("") ); // false
+console.log( Boolean(" ") ); // true
+console.log( Boolean("0")); // true
+console.log( Boolean( Number("0")) ); // false
+          // Boolean( 0 );
+
+
+
+
+
+
