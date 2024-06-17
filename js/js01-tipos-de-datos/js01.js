@@ -219,5 +219,10 @@ console.log(  "marbe" > "Maricela" ); // true
 console.log(  "marbe".toLowerCase() > "Maricela".toLowerCase() );
       //       b > i     false
       //      98 > 105   false
+console.log( "Mar" > "Diana" > 50 ); // false
+
+console.log( 5 > 3 > 2 ); // false
+         //   true >  2
+        //     1   >  2  // false
 
 
