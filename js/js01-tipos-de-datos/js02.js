@@ -67,3 +67,46 @@ const wordToLowerCase2 = function (phrase){
 
 // uso de la función
 console.log( wordToLowerCase("YUPI YUPI El MUÑECO CHUKY") ); // yupi yupi el muñeco chuky
+
+/*
+ ------------ Funciones flecha -----------------------
+             (arrow functions)
+Funciones similares a las funciones expresadas pero:
+ - No requiere la palabra reservada function
+ - Si tiene una solo instrucción no requiere las llaves {}
+ - Si la instrucción es el mismo retorno, no requiere la palabra return
+
+sintaxis:
+    const nombreVariable = (parametros) => instrucción;
+
+    Si en una arrow function se utilizan las {} se debe
+    de agregar explicitamente la palabra returno para retornar
+    un valor.
+
+    const nombreVariable = (parametros) => {
+        instrucción;
+        return expresión;
+    }
+*/
+
+// Realizar una función expresada para calcular el área de un rectángulo.
+/** TODO: crear la función */
+const areaRectangle = function area( base , altura ){
+    return base * altura;
+   }
+
+const calculoAreaRectangulo = (base, altura) => base * altura ;
+
+const calculoAreaRectanguloVer2 = (base, altura) => { 
+   return  base * altura 
+};
+
+// uso de la función
+console.log(`El área de rectángulo es ${ areaRectangle( 6, 4) }`); // 24
+
+// Realizar una Arrow function que calcule el impuesto de un valor
+/** TODO calcular el impuesto de un valor */
+const calcularImpuesto = (valor, impuesto) => valor*impuesto;
+
+// caso de uso:
+console.log( `El impuesto de los calcetines es: ${calcularImpuesto(100, .16 ) }`); // 16
