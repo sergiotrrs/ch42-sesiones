@@ -161,5 +161,31 @@ console.log(  `25, 205 y 1015 terminan 5? ${mismosUltimosDigitos(25, 205, 1015)}
  */
 
  // Hacer con arrow function una función que reciba un texto e imprima en consola
- 
+ const printToConsole = (text) => console.log(text);
+
+ printToConsole("Kari le gusta el color verde");
  // Hacer con arrow function una función que reciba un texto e imprima en alert
+ const printToAlert = (text) => alert(text);
+
+ // Hacer con arrow function una función que reciba un texto e imprima en H1 "app-title"
+ const printToH1 = (text) => document.getElementById("app-title").innerHTML = text;
+
+// Realizar una función(arrow function) que reciba un texto
+// y que pueda imprimir en consola, alert y quizá en el futuro
+// se agregue otra salida para imprimir. 
+
+const printMessage = (text, optionToPrint ) => {
+    if ( optionToPrint === "console"){
+        printToConsole(text);
+    } else if( optionToPrint === "alert" ){
+        printToAlert(text);
+    } else if( optionToPrint === "h1" ){
+        printToH1(text);
+    } else {
+        console.error("Que transa!, te equivocaste de opción");
+    }
+};
+
+printMessage("Hola, amigas", "h1");
+printMessage("No, no, (se rie en bolillense)", "console");
+printMessage("Tres tristes tigres", "CONSOLE"); // envía un error
