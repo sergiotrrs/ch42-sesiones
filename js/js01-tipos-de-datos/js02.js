@@ -174,7 +174,8 @@ console.log(  `25, 205 y 1015 terminan 5? ${mismosUltimosDigitos(25, 205, 1015)}
 // y que pueda imprimir en consola, alert y quizá en el futuro
 // se agregue otra salida para imprimir. 
 
-const printMessage = (text, optionToPrint ) => {
+
+const printMessageIfElse = (text, optionToPrint ) => {
     if ( optionToPrint === "console"){
         printToConsole(text);
     } else if( optionToPrint === "alert" ){
@@ -185,6 +186,27 @@ const printMessage = (text, optionToPrint ) => {
         console.error("Que transa!, te equivocaste de opción");
     }
 };
+/** Refactorización del código con Switch */
+const printMessage = (text, optionToPrint ) => {
+   /*
+    switch: Es una alternativa a if-else. Permite ejecutar
+    diferentes bloques de código basándose en el valor de una expresión
+   */
+    switch( optionToPrint ) {
+        case "console":
+            printToConsole( text);
+            break;
+        case "alert":
+            printToAlert(text);
+            break;
+        case "h1":
+            printToH1(text);
+            break;
+        default:
+            console.error("Opción incorrecta");
+    }
+};
+
 
 printMessage("Hola, amigas", "h1");
 printMessage("No, no, (se rie en bolillense)", "console");
