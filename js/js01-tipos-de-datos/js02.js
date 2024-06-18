@@ -23,13 +23,11 @@ hoisting: comportamiento en JS que permite a las declaración de variables(var)
 o funciones se eleven al comienzo de su ámbito antes de que se ejecute el código.
 
 */
-console.log(  greeting()  );
+console.log(greeting());
 
-
-function greeting(){
-    return "Hola Ch42, extrañamos a Tan y Nan";
+function greeting() {
+  return "Hola Ch42, extrañamos a Tan y Nan";
 }
-
 
 /*
  ------------ Funciones expresadas -----------------------
@@ -45,28 +43,27 @@ sintaxis:
     };
 */
 
-const saludo = function greeting2( name ){
-    return `Hola, me llamo ${name} y tengo hambre`;
-} ;
+const saludo = function greeting2(name) {
+  return `Hola, me llamo ${name} y tengo hambre`;
+};
 
-console.log( saludo("Sergio") );
+console.log(saludo("Sergio"));
 
 // Realizar una función que reciba un palabra y retorne la palabra en minúscula
 // Realizar dos versiones de función:  función declarada y función expresada.
 
 /** Realizar la función acá */
 //Función declarada
-function wordToLowerCase(phrase){
-    return phrase.toLowerCase();
+function wordToLowerCase(phrase) {
+  return phrase.toLowerCase();
 }
 //Función expresada
-const wordToLowerCase2 = function (phrase){
-    return phrase.toLowerCase();
-}
-
+const wordToLowerCase2 = function (phrase) {
+  return phrase.toLowerCase();
+};
 
 // uso de la función
-console.log( wordToLowerCase("YUPI YUPI El MUÑECO CHUKY") ); // yupi yupi el muñeco chuky
+console.log(wordToLowerCase("YUPI YUPI El MUÑECO CHUKY")); // yupi yupi el muñeco chuky
 
 /*
  ------------ Funciones flecha -----------------------
@@ -91,49 +88,78 @@ sintaxis:
 
 // Realizar una función expresada para calcular el área de un rectángulo.
 /** TODO: crear la función */
-const areaRectangle = function area( base , altura ){
-    return base * altura;
-   }
+const areaRectangle = function area(base, altura) {
+  return base * altura;
+};
 
-const calculoAreaRectangulo = (base, altura) => base * altura ;
+const calculoAreaRectangulo = (base, altura) => base * altura;
 
-const calculoAreaRectanguloVer2 = (base, altura) => { 
-   return  base * altura 
+const calculoAreaRectanguloVer2 = (base, altura) => {
+  return base * altura;
 };
 
 // uso de la función
-console.log(`El área de rectángulo es ${ areaRectangle( 6, 4) }`); // 24
+console.log(`El área de rectángulo es ${areaRectangle(6, 4)}`); // 24
 
 // Realizar una Arrow function que calcule el impuesto de un valor
 /** TODO calcular el impuesto de un valor */
-const calcularImpuesto = (valor, impuesto) => valor*impuesto;
+const calcularImpuesto = (valor, impuesto) => valor * impuesto;
 
 // caso de uso:
-console.log( `El impuesto de los calcetines es: ${calcularImpuesto(100, .16 ) }`); // 16
+console.log(`El impuesto de los calcetines es: ${calcularImpuesto(100, 0.16)}`); // 16
 
 // ==================================================================
 // Ejercicios: Convertir las siguientes funciones a Arrow functions.
 
 /** Función 1: Sumar dos números */
-function sumar(a, b) {
+/*function sumar(a, b) {
     return a + b;
-}
-console.log( `La suma de 100 + 5 = ${sumar(100,5)}`); // 105
+}*/
+const sumar = (a, b) => a + b;
+
+console.log(`La suma de 100 + 5 = ${sumar(100, 5)}`); // 105
 
 /** Función 2: Verificar si un número es par */
-function esPar(num) {
+/*function esPar(num) {
     return num % 2 === 0;
-}
+}*/
+const esPar = (num) => num % 2 === 0;
 
-console.log( `El número 18 es par? ${esPar(18)}`); // true
-console.log( `El número 23 es par? ${esPar(23)}`); // false
+console.log(`El número 18 es par? ${esPar(18)}`); // true
+console.log(`El número 23 es par? ${esPar(23)}`); // false
 
 /** Función 3: Verificar si tres números terminan con el mismo dígito */
-function mismosUltimosDigitos(num1, num2, num3) {
+/* function mismosUltimosDigitos(num1, num2, num3) {
     const ultimoDigito1 = num1 % 10;
     const ultimoDigito2 = num2 % 10;
     const ultimoDigito3 = num3 % 10;
     return ultimoDigito1 === ultimoDigito2 && ultimoDigito1 === ultimoDigito3;
-}
+} */
+/*const mismosUltimosDigitos = (num1, num2, num3) =>{
+    const ultimoDigito1 = num1 % 10; // 3
+    const ultimoDigito2 = num2 % 10; // 3
+    const ultimoDigito3 = num3 % 10; // 3
+    return ultimoDigito1 === ultimoDigito2 && ultimoDigito1 === ultimoDigito3;
 
-console.log(`El num. 23, 203 y 1013 terminan en 3? ${mismosUltimosDigitos(23,203,1013)}`);
+    };*/
+const mismosUltimosDigitos = (num1, num2, num3) =>
+  num1 % 10 === num2 % 10 && num1 % 10 === num3 % 10;
+
+const  mismosUltimosDigitosMariana = (num1, num2, num3) => (num1, num2, num3) % 10 === 3;
+
+console.log(  `23, 203 y 1013 terminan 3? ${mismosUltimosDigitos(23, 203, 1013)}`);
+console.log(  `24, 203 y 1013 terminan 3? ${mismosUltimosDigitos(24, 203, 1013)}`);
+console.log(  `25, 205 y 1015 terminan 5? ${mismosUltimosDigitos(25, 205, 1015)}`);
+
+
+// =============================================================
+/*
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+ */
+
+ // Hacer con arrow function una función que reciba un texto e imprima en consola
+ 
+ // Hacer con arrow function una función que reciba un texto e imprima en alert
