@@ -152,13 +152,7 @@ console.log(  `24, 203 y 1013 terminan 3? ${mismosUltimosDigitos(24, 203, 1013)}
 console.log(  `25, 205 y 1015 terminan 5? ${mismosUltimosDigitos(25, 205, 1015)}`);
 
 
-// =============================================================
-/*
- ------------ Funciones de Callback -----------------------
- Es una función(definida, expresada, arrow, anónima) que se pasa 
- a otra función como argumento.
- Se pasa en el argumento como referencia ( sin parentesis).
- */
+
 
  // Hacer con arrow function una función que reciba un texto e imprima en consola
  const printToConsole = (text) => console.log(text);
@@ -169,6 +163,7 @@ console.log(  `25, 205 y 1015 terminan 5? ${mismosUltimosDigitos(25, 205, 1015)}
 
  // Hacer con arrow function una función que reciba un texto e imprima en H1 "app-title"
  const printToH1 = (text) => document.getElementById("app-title").innerHTML = text;
+ const printToLogoTitle = (text) => document.getElementById("logo-title").innerHTML = text;
 
 // Realizar una función(arrow function) que reciba un texto
 // y que pueda imprimir en consola, alert y quizá en el futuro
@@ -207,7 +202,34 @@ const printMessage = (text, optionToPrint ) => {
     }
 };
 
-
 printMessage("Hola, amigas", "h1");
 printMessage("No, no, (se rie en bolillense)", "console");
 printMessage("Tres tristes tigres", "CONSOLE"); // envía un error
+
+// =============================================================
+/*
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+ */
+const printMessageUsingCallback = (text, functionToPrint ) => functionToPrint( text );
+
+// printMessageUsingCallback("Cualquiera puede cocinar" , 18 ); 
+//                            functionToPrint is not a function
+printMessageUsingCallback("Cualquiera puede cocinar",  printToConsole );
+printMessageUsingCallback("Cualquiera puede cocinar", printToH1  );
+//printMessageUsingCallback("Feliz ombligo de la semana", printToH1("Ratamandril")  ); No funciona
+
+// ejercicio
+// Crear una función que modifique "logo-title" con un nuevo mensaje.
+// Usar printMessageUsingCallback para pasarle la nueva función(como referencia), 
+// con el mensaje: "Ratatuil".
+printMessageUsingCallback("Ratotuil", printToLogoTitle );
+
+// Cambiar las imágenes de pitufina a Remy
+// TODO: cambiar el nombre del archivo
+// TODO: usar la propieda src
+// TODO: crear la función que cambie la imagen
+// TODO: agregar IDs a las imágenes
+
