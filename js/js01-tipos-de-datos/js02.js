@@ -228,8 +228,16 @@ printMessageUsingCallback("Cualquiera puede cocinar", printToH1  );
 printMessageUsingCallback("Ratotuil", printToLogoTitle );
 
 // Cambiar las imágenes de pitufina a Remy
-// TODO: cambiar el nombre del archivo
-// TODO: usar la propieda src
-// TODO: crear la función que cambie la imagen
-// TODO: agregar IDs a las imágenes
+// DONE: cambiar el nombre del archivo
+// DONE: usar la propieda src
+// DONE: crear la función que cambie la imagen
+// DONE: agregar IDs a las imágenes
+
+const changeImage = ( imageID, imagePath) => 
+    document.getElementById( imageID ).src = imagePath ;
+
+changeImage( "img1", "./public/img/remy01.jpg" );
+changeImage( "img2", "./public/img/remy02.jpg" );
+changeImage( "img3", "./public/img/remy03.jpg" );
+changeImage( "img4", "./public/img/remy04.jpg" );
 
