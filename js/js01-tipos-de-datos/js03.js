@@ -105,3 +105,73 @@ if (numIndiceDelElemento !== -1 ){
     console.log("Lo siento, tu pan no lo tengo registrado")
 }
 
+// slice: extrae una sección de un array y devuelve los elementos extraidos.
+//        slice no modifica el arreglo original
+//  retorna: nuevo array con los elementos extraidos.
+
+// Hacer un arreglo de edades, las edades deben ser de 18 a 40 años, 10 elementos.
+// *** investigar, crea aleatoriamente las edadades(18-40), 100 elementos.
+// Math.random() // genera aleatorio de 0 al 1 (sin incuir el 1)
+
+const ages = [18, 25, 30, 22, 35, 28, 40, 19, 27, 32];
+
+//const bloqueAges = ages.slice(1); // Entrega del índice 1 hasta el final del arreglo
+                // [25, 30, 22, 35, 28, 40, 19, 27, 32];
+
+const bloqueAges = ages.slice(1, 5); // Se entrega del índice 1 al 5(sin incluir el 5)              
+console.log( bloqueAges ); // [25, 30, 22, 35];
+
+const bloqueAges2 = ages.slice(5,8);
+console.log( bloqueAges2 ); // [28, 40, 19]
+
+// Slice también sirve como alternativa para copiar(clonar) un arreglo.
+
+
+// Pase por valor
+let edadTan = 26;
+let edadDiana = edadTan;
+edadTan = 25;
+
+const reiniciaEdad = (edad) => edad = 0;
+
+reiniciaEdad( edadTan  ); // 0
+console.log( edadTan ); // 25
+
+// pase por referencia
+let autos = ["Mazda", "Vochito"];
+let cars = autos;
+autos.push("Jeepeta");
+console.log( autos ); //  ['Mazda', 'Vochito', 'Jeepeta']
+console.log( cars ); //  ['Mazda', 'Vochito', 'Jeepeta']
+
+const eliminarAuto = ( autos  ) => autos.pop(); // [ 'Mazda', 'Vochito' ]
+
+eliminarAuto( autos );
+console.log( autos ); // [ 'Mazda', 'Vochito' ]
+console.log( cars ); // [ 'Mazda', 'Vochito' ]
+
+eliminarAuto( panes );
+console.log( panes ); // ['Concha', 'Pan de ajo', 'Dona de Chocolate']
+
+// Una función impura puede modificar variables fuera de su
+// ámbito, alterar el estado del programa, realizar operaciones de entrada/salida.
+
+const apellidos = ["López", "Cabrera", "Hernandez"];
+const lastName = apellidos.slice();
+lastName.pop();
+console.log( lastName ); // ['López', 'Cabrera']
+console.log( apellidos ); // ['López', 'Cabrera', 'Hernandez']
+
+// una función es un objeto de tipo function.
+const retornaA = () => "a";
+const retornaB = () => "b";
+const retornaC = () => "c";
+
+console.log( typeof retornaA ); // function
+console.log( typeof retornaB ); // function
+console.log( typeof retornaC ); // function
+
+const imprimeValor = ( fncCallBack ) => console.log( fncCallBack() );
+imprimeValor( retornaA   );
+
+
