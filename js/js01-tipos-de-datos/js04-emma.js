@@ -13,20 +13,24 @@ const imprimirTablaDeMultiplicar = (number) => {
 
 const multiplica = (value) => imprimirTablaDeMultiplicar(value);
 
+const crearBoton = ( number ) => {
+    return `
+        <div class="col-6 col-sm-4 col-md-2 my-2"> 
+            <button 
+                onclick="multiplica(${number})" 
+                type="button" 
+                class="btn btn-info"
+                >
+                    ${number}
+            </button> 
+        </div>
+        `
+};
+
 const crearArregloBotones = ( opciones ) =>{
     let arregloFinalBotones =  "";
     for(let i = 0; i < opciones.length; i++ ){
-        arregloFinalBotones = arregloFinalBotones + `
-                        <div class="col-6 col-sm-4 col-md-2"> 
-                            <button 
-                                onclick="multiplica(${opciones[i]})" 
-                                type="button" 
-                                class="btn btn-info"
-                                >
-                                    ${opciones[i]}
-                            </button> 
-                        </div>
-                        `;
+        arregloFinalBotones = arregloFinalBotones + crearBoton( opciones[i] );
     }
     console.log( arregloFinalBotones );
     return arregloFinalBotones; // string
