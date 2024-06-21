@@ -25,7 +25,15 @@ arregloBotones.innerHTML = `
 `;
 */
 
-const multiplica = (value) => console.log("Pronto multiplicaré el número " + value);
+
+const imprimirTablaDeMultiplicar = (number) => {
+    for (let i = 1; i <= 10; i++) {
+      console.log(`${number} x ${i} = ${number * i}`);
+    }
+  };
+  
+
+const multiplica = (value) => imprimirTablaDeMultiplicar(value);
 
 arregloBotones.innerHTML = `
 <div class="col-6 col-sm-4 col-md-2"> 
