@@ -1,9 +1,39 @@
 console.log("Ejercicio propuesto por Emma");
 
-const opciones = [11, 17, 14, 4, 8];
+const opciones = [11, 17, 14, 4, 8, 3, 16 ];
 
 // Obtener la referencia de "arreglo-botones"
 const arregloBotones = document.getElementById("arreglo-botones");
+
+const imprimirTablaDeMultiplicar = (number) => {
+    for (let i = 1; i <= 10; i++) {
+      console.log(`${number} x ${i} = ${number * i}`);
+    }
+  };
+
+const multiplica = (value) => imprimirTablaDeMultiplicar(value);
+
+const crearArregloBotones = ( opciones ) =>{
+    let arregloFinalBotones =  "";
+    for(let i = 0; i < opciones.length; i++ ){
+        arregloFinalBotones = arregloFinalBotones + `
+                        <div class="col-6 col-sm-4 col-md-2"> 
+                            <button 
+                                onclick="multiplica(${opciones[i]})" 
+                                type="button" 
+                                class="btn btn-info"
+                                >
+                                    ${opciones[i]}
+                            </button> 
+                        </div>
+                        `;
+    }
+    console.log( arregloFinalBotones );
+    return arregloFinalBotones; // string
+};
+
+arregloBotones.innerHTML = crearArregloBotones( opciones );
+
 
 // arregloBotones.innerHTML = "<h4> Quieres ver algo genial? </h4>";
 // arregloBotones.innerHTML = `<h4> Quieres ver algo genial? </h4>`;
@@ -25,16 +55,7 @@ arregloBotones.innerHTML = `
 `;
 */
 
-
-const imprimirTablaDeMultiplicar = (number) => {
-    for (let i = 1; i <= 10; i++) {
-      console.log(`${number} x ${i} = ${number * i}`);
-    }
-  };
-  
-
-const multiplica = (value) => imprimirTablaDeMultiplicar(value);
-
+/*
 arregloBotones.innerHTML = `
 <div class="col-6 col-sm-4 col-md-2"> 
     <button onclick="multiplica(${opciones[0]})" type="button" class="btn btn-info">${opciones[0]}</button> 
@@ -51,4 +72,4 @@ arregloBotones.innerHTML = `
 <div class="col-6 col-sm-4 col-md-2"> 
     <button onclick="multiplica(${opciones[4]})" type="button" class="btn btn-info">${opciones[4]}</button> 
 </div>
-`;
+`;*/
