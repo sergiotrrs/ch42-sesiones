@@ -91,3 +91,48 @@ for (let i = 0; i < celulares.length; i++) {
     // console.log( element.propietario, element.modelo );
     console.log( celulares[i].propietario, celulares[i].modelo );    
 }
+
+// ==============================
+const mesCumpleaños = (mes) =>{
+  if ( mes === 12 || mes <= 2) {
+    console.log("invierno");
+  } else if ( mes >=3 && mes <= 5 ){  //(5 >= mes && mes >= 3) {
+    console.log("primavera");
+  } else if ( mes >= 6 && mes <= 8 ) {
+    console.log("verano");
+  } else if ( mes >= 9 && mes <= 11) {
+    console.log("otoño");
+  } else {
+    console.log("error de entrada");
+  }
+}
+
+mesCumpleaños(5);
+
+// ======================
+function obtenerEstacion(mes) {
+    if( mes >= 1 && mes<=12 ){
+    const estaciones = {
+        12: "Invierno",
+        1: "Invierno",
+        2: "Invierno",
+        3: "Primavera",
+        4: "Primavera",
+        5: "Primavera",
+        6: "Verano",
+        7: "Verano",
+        8: "Verano",
+        9: "Otoño",
+        10: "Otoño",
+        11: "Otoño",
+    }; 
+    return estaciones[mes];
+} else {
+    return "Error en el mes";
+}
+}
+let mesDeCumpleanos = 7; 
+
+let estacion = obtenerEstacion(mesDeCumpleanos);
+console.log(estacion);
+
