@@ -63,7 +63,7 @@ const getPersonas = ( url, convertirAUsuarios ) =>{
             // console.log(data);
             const users = convertirAUsuarios( data );
             console.log( users );            
-            buttonSection.innerHTML = insertarTarjetas( users );
+            buttonSection.innerHTML =  insertarTarjetas( users );
         } )           
         .catch( (error)=> console.log(error)  );
 
