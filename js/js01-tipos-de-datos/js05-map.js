@@ -62,3 +62,21 @@ const sumarMonedas = ( array ) => {
 console.log( sumarMonedas(  monedas  ) );
 
 console.log( monedas.reduce( (sumatoria, currentValue)=> sumatoria + currentValue , 100 ) );
+
+// ===============  Insertar tarjetas con MAP ===========================
+
+const buttonSection = document.getElementById("arreglo-botones");
+
+const insertCards = ( electrolitos ) =>{
+    const cards = electrolitos.map(  element => `
+     <div class="col-lg-4 col-md-6 col-sm-10">
+        <div class="card m-2">
+            <div class="card-body">
+                Toma ${element}
+            </div>
+        </div>                
+    </div>
+        ` );
+    return cards.join("");
+}
+buttonSection.innerHTML = insertCards( ["Electrolic", "Pedialit", "Electrolife"] );
