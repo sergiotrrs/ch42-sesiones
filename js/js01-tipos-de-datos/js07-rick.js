@@ -2,7 +2,7 @@ const buttonSection = document.getElementById("arreglo-botones");
 
 const insertarTarjetas = ( users) =>{
     const cards = users.map(  user => `
-     <div class="col-lg-4 col-md-6 col-sm-10">
+     <div class="col-lg-3 col-md-4 col-sm-5">
         <div class="card m-2">
         <img src="${user.image}" class="card-img-top" alt=${user.name}>
             <div class="card-body">
@@ -15,6 +15,7 @@ const insertarTarjetas = ( users) =>{
 }
 
 const getPersonas = ( url ) =>{
+    console.log("inicia mi fetch");
     fetch( url )
         .then( (resolve)=> resolve.json() ) 
         .then( (data)=> {            
@@ -22,7 +23,8 @@ const getPersonas = ( url ) =>{
             buttonSection.innerHTML =  insertarTarjetas( data.results );
         } )           
         .catch( (error)=> console.log(error)  );
+    console.log("Termina mi fetch");
 };
 
 // getPersonas( "https://rickandmortyapi.com/api/character");
-getPersonas( "https://rickandmortyapi.com/api/character/?page=10");
+getPersonas( "https://rickandmortyapi.com/api/character/?page=1");
