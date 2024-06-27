@@ -1,6 +1,6 @@
 import { pensamientoMariana, miPensamiento as pensamientoSerch, myFunctionRubi } from "./js08-oop-user.js"
 import { detallesMora } from "./js08-oop-user.js";
-import { Comestible } from "./js08-comestibles.js";
+import { Comestible, Enlatado } from "./js08-comestibles.js";
 
 console.log("JS08 OOP");
 
@@ -41,3 +41,7 @@ mandarina.sabor = "citrico";
 console.log( mandarina.sabor ); // citrico
 mandarina.fechaCreacion = new Date("2024-07-02T07:00:00" );
 console.log( mandarina.mostrarCaducidad() ); // 2024-07-02 08:00:00
+
+// ======== Usando una clase heredada =================
+ const duraznosAlmibar = new Enlatado("Duraznos en Almibar");
+ console.log( duraznosAlmibar.mostrarCaducidad() );
