@@ -4,16 +4,28 @@ const miPensamiento = "Pensé en la sesión de hoy";
 
 const myFunctionRubi = ()=> console.log("Rubí piensa que quiere dormir");
 
-const detallesMora = { 
+const berryDetails = { 
     nombre: "Mora",
     color: "café",
     talla: "mediana",
     ladrar: function(){
-        return `${detallesMora.nombre} está ladrando`;
+        return `${this.nombre} está ladrando`;
     },
     cortePelo: function(){
-        return `A ${detallesMora.nombre} le están cortando su pelo color ${detallesMora.color}`;
+        return `A ${this.nombre} le están cortando su pelo color ${this.color}`;
     }
 };
 
-export { pensamientoMariana, miPensamiento, myFunctionRubi, detallesMora };
+const tigerDetails = { 
+    nombre: "Tiger",
+    color: "atigrado",
+    talla: "grande",
+    ladrar: function(){
+        return `${this.nombre} está ladrando`;
+    },
+    cortePelo: function(){
+        return `A ${this.nombre} le están cortando su pelo color ${this.color}`;
+    }
+};
+
+export { pensamientoMariana, miPensamiento, myFunctionRubi, berryDetails as detallesMora };
