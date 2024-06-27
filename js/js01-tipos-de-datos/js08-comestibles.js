@@ -27,7 +27,7 @@ class Comestible {
     mostrarCaducidad(){
         const calcularCaducidad =  this.#fechaCreacion.getTime() + 3_600_000;
         const caducidad = new Date(calcularCaducidad );
-        return `Soy ${this.nombre}, caduco el ${ caducidad.toLocaleString() }`;
+        return `I'm ${this.nombre}, expire on ${ caducidad.toLocaleString() }`;
 
     }
 

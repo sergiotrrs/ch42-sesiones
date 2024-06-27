@@ -45,3 +45,43 @@ console.log( mandarina.mostrarCaducidad() ); // 2024-07-02 08:00:00
 // ======== Usando una clase heredada =================
  const duraznosAlmibar = new Enlatado("Duraznos en Almibar");
  console.log( duraznosAlmibar.mostrarCaducidad() );
+
+
+ // ============ solución del ejercicio 4 ===============
+/*
+Exercise #4 (sugerencia filter() e includes() )
+let student1Courses = ['Math', 'English', 'Programming'];
+let student2Courses = ['Geography', 'Spanish', 'Programming'];
+Create a program that loops over the 2 arrays; if there are any common courses print them out to the console.
+
+*/
+const student1Courses = ['Math', 'English', 'Programming', 'Esto me hace llorar', 'Ciencias ocultas'];
+
+const student2Courses = ['Geography', 'Spanish', 'Programming', 'Ciencias ocultas'];
+
+const commonCourses = [];
+for (let course1 of student1Courses ){
+    console.log( course1 ); 
+    for(let course2 of student2Courses ){
+        if( course1 === course2) commonCourses.push( course1 );
+    }
+}
+console.log("Cursos en común: " +  commonCourses.join(", ")  );
+
+// ========== resolviendo con filter e include
+const commonCourse2 = student1Courses.filter( course1 =>  student2Courses.includes(course1) );
+console.log( commonCourse2 );
+
+// =============== pregunta de entrevista ===============
+/*
+ Dado el siguiente texto: "Ya vámonos"
+ Mostrar la frase al revés: "sonomáv aY" 
+*/
+const phrase2 = "Ya vámonos";
+let reversePhrase = "";
+for(let i = phrase2.length - 1 ;  i >= 0 ; i-- ){
+    reversePhrase = reversePhrase + phrase2.charAt(i);
+}
+console.log( reversePhrase );
+
+console.log(  phrase2.split("").reverse().join("")   );
