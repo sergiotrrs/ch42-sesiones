@@ -34,6 +34,10 @@ const fresa = new Comestible("Fresa", "dulce" );
 const mandarina = new Comestible("Tangerine", "deliciousa" );
 
 console.log( fresa.mostrarCaducidad() );
-console.log( mandarina.mostrarCaducidad() );
+console.log( mandarina.mostrarCaducidad() ); // la hora actual + 1 h.
 
-
+console.log( mandarina.sabor  ); // deliciousa
+mandarina.sabor = "citrico";
+console.log( mandarina.sabor ); // citrico
+mandarina.fechaCreacion = new Date("2024-07-02T07:00:00" );
+console.log( mandarina.mostrarCaducidad() ); // 2024-07-02 08:00:00

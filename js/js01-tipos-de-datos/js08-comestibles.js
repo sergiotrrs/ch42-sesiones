@@ -14,19 +14,30 @@
 */
 class Comestible {
 
+    #fechaCreacion;
+
     // El método constructor nos ayuda a inicializar atributos del objeto
     constructor( nombreEntrada = "alguito", sabor = "neutro" ){
         this.nombre = nombreEntrada;
         this.sabor = sabor;
-        this.fechaCreacion = new Date();
+        this.#fechaCreacion = new Date();
         console.log(`Soy ${this.nombre} y tengo vida :V , mi sabor es ${this.sabor}`);
     }
 
     mostrarCaducidad(){
-        const calcularCaducidad =  this.fechaCreacion.getTime() + 3_600_000;
+        const calcularCaducidad =  this.#fechaCreacion.getTime() + 3_600_000;
         const caducidad = new Date(calcularCaducidad );
         return `Soy ${this.nombre}, caduco el ${ caducidad.toLocaleString() }`;
 
+    }
+
+    // métodos setters y getters
+    get fechaCreacion(){
+        return this.#fechaCreacion;
+    }
+
+    set fechaCreacion( newValue ){
+        this.#fechaCreacion = newValue;
     }
 
 }
