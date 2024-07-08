@@ -158,6 +158,72 @@ public class TiposDeDatos {
 		 */
 		boolean myVarBoolean = true;
 		
+		// ********** Conversiones implícitas *******
+		byte coquita350ml = 60;
+		short cocaJumbo2l = coquita350ml;
+		
+		// ********** Conversiones explícitas *******
+		short pozoleGrande1l = 258;
+		byte pozoleBurbuja = (byte)pozoleGrande1l;
+		System.out.println("Valor de pozole Burbuja: " + pozoleBurbuja);
+		
+		// ********** overflow **********************
+		/*
+		 * Situación donde un valor calculados durante
+		 * una operación aritmética excede el rango
+		 * máximo que puede ser representado por el 
+		 * el tipo de dato utilizado.
+		 * 
+		 */
+		byte i = 0;
+		for(     ; i < 10; i-- ) {
+			System.out.println( i );
+		}
+		System.out.println("final de i: " + i);
+		
+		
+		//====================================================
+		// String es un tipo non-primitive
+		/*
+		 * Tipo de dato String
+		 * Es un objeto que se define con comillas dobles.
+		 * 
+		 * Si deseas imprimir comillas dobles,se usa el 
+		 * caracter de escape \
+		 *   \b backspace
+		 *   \t tab
+		 *   \n line feed
+		 *   \r carriage return
+		 *   \" double quote
+		 *   \' single quote
+		 *   \\ backslash
+		 */
+		String name = "\n D \n\t u \n\t l \n\t c \n\t e";
+		System.out.println("Hola" + name); // Hola Dulce
+		
+		// Imprimir en consola:     En 15 minutos comeremos "Albóndigas"
+		System.out.println("En 15 minutos comeremos \"Albóndigas\"");
+		
+		// Conversión de String a números
+		// ¿Cuántas albóndigas?
+		String numAlbondigasAComer = "3";
+		
+		// Conversión explícita
+		int numAlbondigas =Integer.parseInt(numAlbondigasAComer);  
+		int albondigasRestantes = numAlbondigas - 2; // 1
+		
+		// Conversión de números a String
+		int numSuerte = 1258;
+		
+		// Obtener el dígito (8)
+		String numSuerteStr = String.valueOf( numSuerte ); // "1258"
+		int posicionUltimoDigito =  numSuerteStr.length() - 1;
+		char ultimoDigito = numSuerteStr.charAt( posicionUltimoDigito );
+		System.out.println("Mi último dígito es: " +  ultimoDigito );
+		
+		System.out.println("Mi último dígito usando residuo: " + (numSuerte % 10) );
+		
+		
 	}
 
 }
