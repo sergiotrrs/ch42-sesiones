@@ -331,7 +331,7 @@ public class TiposDeDatos {
 		//}
  		int iterador = 0;
  		while(  iterador < numbers.length  ) {
- 			sum += numbers[ ++ iterador]; 		
+ 			sum += numbers[ iterador++ ]; 		
  		}
  		
 		System.out.println(sum); // 17
