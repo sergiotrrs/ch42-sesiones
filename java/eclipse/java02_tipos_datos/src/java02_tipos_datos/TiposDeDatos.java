@@ -169,7 +169,7 @@ public class TiposDeDatos {
 		
 		// ********** overflow **********************
 		/*
-		 * Situación donde un valor calculados durante
+		 * Situación donde un valor calculado durante
 		 * una operación aritmética excede el rango
 		 * máximo que puede ser representado por el 
 		 * el tipo de dato utilizado.
@@ -209,7 +209,7 @@ public class TiposDeDatos {
 		String numAlbondigasAComer = "3";
 		
 		// Conversión explícita
-		int numAlbondigas =Integer.parseInt(numAlbondigasAComer);  
+		int numAlbondigas = Integer.parseInt(numAlbondigasAComer);  		     
 		int albondigasRestantes = numAlbondigas - 2; // 1
 		
 		// Conversión de números a String
@@ -223,7 +223,119 @@ public class TiposDeDatos {
 		
 		System.out.println("Mi último dígito usando residuo: " + (numSuerte % 10) );
 		
+		String firstName =  "Kari";
+		firstName.length();
 		
+		// Operadores numéricos
+		double number = 5.2;
+		int opA = (int)number; // 5
+		int opB = 6;
+		
+		opA += 10;  // opA = opA + 10;  opA = 15;
+		
+		int resta = opA - opB; // 9;
+		
+		byte valueA = 2;
+		byte valueB = (byte)(valueA * 2);
+		
+		int valueC = 2;
+		int valueD = valueA * 2;
+		
+		opA = 5;
+		int multiplicacion = (int)(opA * 0.1); // 0
+		
+		// Condicional
+		opA = 10;
+		String message = opA > 50 ? "Es mayor a 50" : "Es menor a 50";
+		// if( opA > 50  ) message = "Es mayor a 50";
+		// else message = "Es menor o igual a 50";
+		
+		System.out.println( message );
+		
+		// Operadores Comparativos
+		// El resultado es un booleano
+		// <, <=, >, >=, == , !=
+
+		opA = 50;
+		message = opA != 8 ? "El número no es 8": "El núm es 8";
+		System.out.println(message);
+		
+		opA = 100;
+		message = opA == 100 ? "El número es 100": "El núm no es 100";
+		System.out.println(message);
+		
+		// Operadores de incremento y decremento
+		// Preincremento: ++variable;
+		// predecremento: --variable;
+		// Postincremento: variable++;
+		// postdecremento: variable--;
+		/*
+		 * Se usan para incrementar o decrementar el valor de
+		 * una variable en una unidad.
+		 * La diferencia en pre a post radica en el momento
+		 * en que se realiza el incremento o decremento con
+		 * la evaluación de la expresión.
+		 */
+		
+		int edadDiana = 25;
+		edadDiana++; // edadDiana = edadDiana + 1;
+		System.out.println(edadDiana); // 26
+		
+		int edadArantxa = 19;
+		++edadArantxa;
+		System.out.println(edadArantxa); // 20
+		
+		
+		
+		// ================
+		edadDiana = 25;
+		int edadAImprimir;
+		// edadDiana = edadDiana + 1;
+		// edadAImprimir = edadDiana;
+		edadAImprimir = ++edadDiana; // pre-incremento
+		System.out.println( edadAImprimir ); // 26
+		
+		edadArantxa = 19;
+		// edadAImprimir =  edadArantxa;
+		// edadArantxa = edadArantxa + 1;
+		edadAImprimir = edadArantxa++;
+ 		System.out.println( edadAImprimir ); // 19
+		
+		//--------- Ejercicio -------------------------
+ 		int x = 5;
+ 		int y = x++; // y = x;    x = x + 1;
+ 		 		
+ 		System.out.println("Valor de x: " + x); //  6
+ 		System.out.println("Valor de y: " + y); //  5
+ 		
+ 		// ----------------------------------------------
+ 		x = 5;
+ 		y = ++x; //    x = x + 1; y = x;
+ 		 		
+ 		System.out.println("Valor de x: " + x); // 6
+ 		System.out.println("Valor de y: " + y); // 6
+ 		
+ 		// ----------------------------------------------
+ 		x = 5;
+ 		y = ++x; // x = 6; y = 6
+ 		 		
+ 		System.out.println("Valor de x: " + x++ ); // imprimir(6); x = 7;
+ 		System.out.println("Valor de y: " + ++y ); // y = 7; imprimir(7)
+ 		
+ 		// Ejercicio con arrays
+ 		// Obtener la sumatoria de los valores dentro del arreglo.
+ 		int[] numbers = {2,4,5,6};
+ 		int sum = 0; 		 	
+ 		//for (int j = 0; j < numbers.length; j++) {
+		//	sum += numbers[j];
+		//}
+ 		int iterador = 0;
+ 		while(  iterador < numbers.length  ) {
+ 			sum += numbers[ ++ iterador]; 		
+ 		}
+ 		
+		System.out.println(sum); // 17
+ 		
 	}
 
 }
