@@ -42,6 +42,19 @@ public class CondicionalIf {
 	 else message = "No puede votar";
 	 
 	 System.out.println(message);
+	 
+	 // --------------Ejercicio mental -----------------
+	 edad = 20;
+	 message = "";
+	 
+	 if( edad >=21 );{
+		 System.out.println("Mensaje 1: Mayor de edad en USA");
+	 }
+	 System.out.println("Mensaje 2: Miércoles de plaza en Soriana");
+	 
+	 // ¿Que mensajes se imprime en consola? 
+	 // mensaje 1.
+	 
 		
 		
 	}
