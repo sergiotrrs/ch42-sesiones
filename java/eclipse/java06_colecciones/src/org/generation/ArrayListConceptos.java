@@ -73,6 +73,11 @@ public class ArrayListConceptos {
 			System.out.println("a Ch42 le gusta " + libro);
 		}
 		
+		// Reemplazar un elemento usando set()
+		libros.set( 2 , "El principito" );
+		System.out.println( libros );
+		
+		
 	}
 
 }
