@@ -62,7 +62,7 @@ public class ArrayConceptos {
 		// Generar un arreglo de 2 dimensiones
 		String[][] participantes = new String[3][2]; // 3 filas y 2 columnas
 				
-		/*  [ [], [ ,f1c1], [] ]
+		/*  [ [  , "Linda" ], [ ,f1c1], [] ]
 		 *  
 		 *  [ 
 		 *     [ f0c0 , f0c1 ] ,  
@@ -71,6 +71,8 @@ public class ArrayConceptos {
 		 *  ]	
 		 */
 		participantes[1][1] = "Rubí";
+		participantes[0][1] = "Linda";
+		
 				
 				
 				
