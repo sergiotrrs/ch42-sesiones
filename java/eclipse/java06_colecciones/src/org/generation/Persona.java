@@ -13,5 +13,10 @@ public class Persona {
 		String nombreEnMayuscula = nombrePersonaASaludar.toUpperCase();
 		System.out.println( nombre + " Hola " + nombrePersonaASaludar );		
 	}
+	
+	@Override
+	public String toString() {
+		return "Soy " + nombre;
+	}
 
 }
