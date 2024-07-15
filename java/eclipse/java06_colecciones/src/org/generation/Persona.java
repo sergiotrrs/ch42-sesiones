@@ -11,7 +11,7 @@ public class Persona {
 	// Método sin retorno
 	void saludar( String nombrePersonaASaludar ) {
 		String nombreEnMayuscula = nombrePersonaASaludar.toUpperCase();
-		System.out.println("Hola " + nombrePersonaASaludar );		
+		System.out.println( nombre + " Hola " + nombrePersonaASaludar );		
 	}
 
 }
