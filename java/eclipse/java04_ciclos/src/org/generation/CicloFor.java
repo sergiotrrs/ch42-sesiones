@@ -95,9 +95,8 @@ public class CicloFor {
 		 */
 		
 		int fin = 20;
-
-		for (int i = 1; i <= fin; i++ ) {
-			
+		String message;
+		for (int i = 1; i <= fin; i++ ) {								
 			if ( i % 3 == 0 && i % 5 == 0 ) {
 				System.out.println("fizzbuz");
 			} else if ( i % 3 == 0 ) {
