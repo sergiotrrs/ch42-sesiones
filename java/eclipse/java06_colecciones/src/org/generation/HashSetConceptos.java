@@ -1,5 +1,6 @@
 package org.generation;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class HashSetConceptos {
@@ -58,17 +59,41 @@ public class HashSetConceptos {
 		// Muestra solo los elementos únicos
 		
 		// Paso 1: Crear un Array List de String de Dulces
+		ArrayList<String> dulces = new ArrayList<>();
 		
-		// PAso 2: Agregar nombres de dulces, repetir por lo menos 5
+		// Paso 2: Agregar nombres de dulces, repetir por lo menos 5
+		dulces.add("Rockaleta");
+		dulces.add("Chupirul");
+		dulces.add("Picafresa");
+		dulces.add("Larin");
+		dulces.add("Aciduladito");
+		dulces.add("Bombones");
+		dulces.add("Skwinkles");
+		dulces.add("Chocoretas");
+		dulces.add("Rockaleta");
+		dulces.add("Mazapán");
+		dulces.add("Picafresa");
+		dulces.add("Bombones");
+		dulces.add("Manzana de caramelo");
+		dulces.add("Manzana con chilito");
+		dulces.add("Obleas");
+		dulces.add("Obleas");
+		
+		System.out.println("Núm dulces: " + dulces.size() ); // 16
 		
 		// Paso 3: Crear una colección Hash Set
+		HashSet<String> dulcesUnicos =  new HashSet<>();
 		
 		// Paso 4: Iterar los elementos del Array List
 		        // Insertar los elementos del Array List en el Hash Set
+		for (String dulce : dulces) {
+			dulcesUnicos.add(dulce);
+		}
 		
 		// PAso 5: Imprimir el núm de elementos del HashSet
 		//         Imprimir los elementos del HashSet
-		
+		System.out.println("No repetidos: " + dulcesUnicos.size() );
+		System.out.println( dulcesUnicos);
 		
 		
 		
