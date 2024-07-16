@@ -1,7 +1,9 @@
 package org.generation;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+//import java.util.ArrayList;
+//import java.util.HashSet;
+//import java.util.List;
+import java.util.*;
 
 public class HashSetConceptos {
 
@@ -82,22 +84,54 @@ public class HashSetConceptos {
 		System.out.println("Núm dulces: " + dulces.size() ); // 16
 		
 		// Paso 3: Crear una colección Hash Set
-		HashSet<String> dulcesUnicos =  new HashSet<>();
+		HashSet<String> dulcesUnicos =  new HashSet<>( dulces );
 		
 		// Paso 4: Iterar los elementos del Array List
 		        // Insertar los elementos del Array List en el Hash Set
-		for (String dulce : dulces) {
-			dulcesUnicos.add(dulce);
-		}
+//		for (String dulce : dulces) {
+//			dulcesUnicos.add(dulce);
+//		}
 		
-		// PAso 5: Imprimir el núm de elementos del HashSet
+		// Paso 5: Imprimir el núm de elementos del HashSet
 		//         Imprimir los elementos del HashSet
 		System.out.println("No repetidos: " + dulcesUnicos.size() );
 		System.out.println( dulcesUnicos);
 		
+		// ---------------------------------------------------------
+		// -------------- Persona en materias ----------------------
+		
+		Persona diana = new Persona("Diana Laura");
+		Persona desire = new Persona("Desire García");
+		Persona arlette = new Persona("Arlette Miranda");
+		Persona arantxa = new Persona("Arantxa Vázquez");
+		Persona emma = new Persona("Emma Gaxiola");
+		Persona brenda = new Persona("Brenda Morán");
+		Persona jaqui = new Persona("Jaqueline Torres");
+		
+		ArrayList<Persona> materiaFotografia = new ArrayList<>( 
+				List.of(desire, arlette, emma, brenda) 
+				);
+		
+		ArrayList<Persona> materiaQuimica = new ArrayList<>( 
+				List.of(diana, jaqui ) 
+				);
+		
+		ArrayList<Persona> materiaMusica = new ArrayList<>( 
+				List.of( emma, diana, brenda, arlette ) 
+				);
+		
+		// Qué personas de mi escuela tengo inscritas
+		// en Fotografía y Música? 5 personas
+		// desire, arlette, emma, brenda, diana
+		HashSet<Persona> personaFotoYMusic = new HashSet<>();
+		personaFotoYMusic.addAll( materiaFotografia );
+		personaFotoYMusic.addAll( materiaMusica );
+		
+		System.out.println("Núm Personas en Foto y Music: " +
+		personaFotoYMusic.size() ); // 5
+		System.out.println( personaFotoYMusic );
 		
 		
-
 	}
 
 }

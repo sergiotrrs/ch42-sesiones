@@ -7,6 +7,21 @@ public class Persona {
 	// Artibutos static (atributos de clase)
 	static String tipo;
 	
+	/*
+	 * Regla de constructores:
+	 *  - Debe tener el mismo nombre de la clase
+	 *  - No debe tener nigún tipo de retorno
+	 *  - Cuando no se agrega algún constructor Java agrega el default 
+	 *  - Si agregas un constructor y requieres el default, debes agregarlo
+	 */
+	Persona(String nombrePersona ){
+		nombre = nombrePersona;
+		
+	}
+	
+	Persona(){
+		// Constructor Default
+	}
 	
 	// Método sin retorno
 	void saludar( String nombrePersonaASaludar ) {
