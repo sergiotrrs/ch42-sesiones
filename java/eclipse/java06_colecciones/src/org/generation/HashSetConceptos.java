@@ -108,6 +108,11 @@ public class HashSetConceptos {
 		Persona brenda = new Persona("Brenda Morán");
 		Persona jaqui = new Persona("Jaqueline Torres");
 		
+		HashSet<Persona> alumnas = new HashSet<>(
+				List.of(diana, desire, arlette, arantxa, 
+						emma, brenda, jaqui)
+				);
+		
 		ArrayList<Persona> materiaFotografia = new ArrayList<>( 
 				List.of(desire, arlette, emma, brenda) 
 				);
@@ -131,6 +136,18 @@ public class HashSetConceptos {
 		personaFotoYMusic.size() ); // 5
 		System.out.println( personaFotoYMusic );
 		
+		// Buscar las personas que no están inscritas
+		// en música y fotografía
+		ArrayList<Persona> noInscritas = new ArrayList<>();
+		
+		for (Persona persona : alumnas ) {
+			if(  !personaFotoYMusic.contains(persona) ) {
+				noInscritas.add(persona);
+			}			
+		}
+		
+		System.out.println("Núm no inscritas: " + noInscritas.size());
+		System.out.println( noInscritas );
 		
 	}
 
