@@ -31,6 +31,7 @@ public class ArrayListConceptos {
 		// ArrayList<Integer> calificaciones =  new ArrayList< Integer >();
 		ArrayList<Integer> calificaciones =  new ArrayList<>();
 		
+		
 		// Crear un array list de Persona
 		ArrayList<Persona> personas = new ArrayList<>();
 		

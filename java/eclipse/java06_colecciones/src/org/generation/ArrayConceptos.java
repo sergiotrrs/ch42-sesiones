@@ -74,7 +74,7 @@ public class ArrayConceptos {
 		participantes[0][1] = "Linda";
 		
 				
-				
+		Persona[] people = new Persona[10];		
 				
 		
 	}
