@@ -39,17 +39,27 @@ public class Atm {
 	}
 	
 	// atributos de clase (static fields)
-	static String bankName;
+	static String bankName = "BBVA";
+	static int counter;
+	
+	// Bloque de inicializacion de atributos estáticos
+	static {
+		counter = 1;
+	}
 	
 	// métodos constructores
 	Atm(String model, double balance){
-		this.model = "C";
+		this.model = model;
 		this.balance = balance;
+		this.serialNumber = counter++;
 	}
 	
 	// métodos de instancia(non-static methods)
 	
 	// métodos de clase(static methods) 
+	static int size(){
+		return counter - 1;
+	}
 	
 
 }
