@@ -37,4 +37,55 @@ public class Atm {
 		this.serialNumber = ++counter;
 	}
 	
+	/*
+	 * Los métodos setters y getters son utilizados
+	 * para acceder y modificar los
+	 * valores de las propiedades privadas.
+	 * 
+	 * Ventajas:
+	 *  - Encapsulamiento: protegen las propiedades privadas
+	 *   de accesos no autorizados y modificaciones directas.
+	 *  - Control: permite agregar lógica adicional en los métodos
+	 *   como validaciones o transformaciones antes de obtener
+	 *   o establacer un valor.
+	 *  - Flexibilidad: Proporcionan una interfaz pública para 
+	 *   acceder a las propiedades, lo que facilita el cambio
+	 *   de la implementación interna sin afectar a los usuarios
+	 *   de la clase. 
+	 * 
+	 */
+	public void setModel(String newModel) {
+		this.model = newModel;
+	}
+	
+	public String getModel(){
+		return this.model;
+	}
+	
+	// realizar set ang get de amount
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	
+	public double getAmount(){
+		return this.amount;
+	}
+
+	// realizar el get de serialNumber
+	public int getSerialNumber() {
+		return this.serialNumber;
+	}
+	
+	// Método para saber el número total de cajeros creados
+	/**
+	 * Obtener el núm de cajeros creados
+	 * @return núm de cajeros
+	 */
+	public static int getCounter(){
+		return counter;
+	}
+	
+	
+	
+	
 }
