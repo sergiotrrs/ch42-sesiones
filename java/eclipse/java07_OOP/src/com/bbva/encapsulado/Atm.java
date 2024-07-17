@@ -49,6 +49,25 @@ public class Atm {
 	 *  maneras, proporcionando flexibilidad al programador
 	 *  para instanciar la clase con diferentes conjuntos de
 	 *  datos.
+	 *  
+	 *  La sobrecarga de métodos en Java es una 
+	 *  característica que permite definir múltiples 
+	 *  métodos con el mismo nombre pero con diferentes 
+	 *  listas de parámetros (tipo y/o número de parámetros) 
+	 *  dentro de una misma clase. Esto facilita la 
+	 *  creación de métodos que realizan tareas similares 
+	 *  pero con diferentes tipos de datos o diferentes 
+	 *  cantidades de información. 
+	 *  
+	 *  Reglas para la Sobrecarga de Métodos 
+	 *  - Diferente número de parámetros: 
+	 *  Puedes tener métodos con el mismo nombre pero con 
+	 *  diferente cantidad de parámetros. 
+	 *  - Diferente tipo de parámetros: Puedes tener métodos 
+	 *  con el mismo nombre pero con diferentes tipos 
+	 *  de parámetros. 
+	 *  Orden de los parámetros: Puedes cambiar el orden 
+	 *  de los parámetros si tienen diferentes tipos.
 	 */
 	public Atm() {
 		// ATM por defaul, Modelo: T-800, Amount: $1_000_000
