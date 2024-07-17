@@ -55,7 +55,7 @@ public class Atm {
 	 *  métodos con el mismo nombre pero con diferentes 
 	 *  listas de parámetros (tipo y/o número de parámetros) 
 	 *  dentro de una misma clase. Esto facilita la 
-	 *  creación de métodos que realizan tareas similares 
+	 *  creación de tareas similares 
 	 *  pero con diferentes tipos de datos o diferentes 
 	 *  cantidades de información. 
 	 *  
@@ -66,7 +66,7 @@ public class Atm {
 	 *  - Diferente tipo de parámetros: Puedes tener métodos 
 	 *  con el mismo nombre pero con diferentes tipos 
 	 *  de parámetros. 
-	 *  Orden de los parámetros: Puedes cambiar el orden 
+	 *  - Orden de los parámetros: Puedes cambiar el orden 
 	 *  de los parámetros si tienen diferentes tipos.
 	 */
 	public Atm() {
@@ -109,6 +109,15 @@ public class Atm {
 	// realizar set ang get de amount
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	
+	/**
+	 * Sobre carga de setAmoun recibiendo
+	 * un string
+	 * 
+	 */
+	public void setAmount(String amount ) {
+		setAmount(  Double.parseDouble(amount) );
 	}
 	
 	public double getAmount(){

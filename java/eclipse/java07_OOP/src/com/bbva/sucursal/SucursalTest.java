@@ -33,6 +33,11 @@ public class SucursalTest {
 		System.out.println( cajeros.get(5).getAmount() ); // 1000000
 		System.out.println( cajeros.get(5).getSerialNumber() ); // 6
 		
+		cajeros.get(5).setAmount(2_000_000);
+		
+		String newAmount = "800000";
+		double newAmountDouble = Double.parseDouble(newAmount);
+		cajeros.get(5).setAmount( newAmountDouble );
 		
 	}
 
