@@ -25,6 +25,14 @@ public class SucursalTest {
 		// Mostrar el núm total de cajeros
 		System.out.println("ATMs: " +  Atm.getCounter() );
 		
+		// Agregar un Atm con valores por default
+		Atm cajeroDefault = new Atm();
+		cajeros.add( cajeroDefault ); // index 5
+		System.out.println("==== index 5 ======");
+		System.out.println( cajeros.get(5).getModel() ); // T-800
+		System.out.println( cajeros.get(5).getAmount() ); // 1000000
+		System.out.println( cajeros.get(5).getSerialNumber() ); // 6
+		
 		
 	}
 

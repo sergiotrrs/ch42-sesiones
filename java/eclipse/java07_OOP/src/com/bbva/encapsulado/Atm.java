@@ -32,9 +32,34 @@ public class Atm {
 	private static int counter;
 	
 	public Atm(String model, double amount){
-		this.model = model;
+		this.model = model.toUpperCase();
 		this.amount = amount;
 		this.serialNumber = ++counter;
+	}
+	
+	/**
+	 *  Sobre carga de métodos.
+	 *  
+	 *  La sobre carga de métodos( o constructores) se refiere
+	 *  a la capacidad de una clase de tener múltiples métodos
+	 *  con la misma firma, pero diferente lista de parámetros.
+	 *  
+	 *  Esto permite que los objetos de la clase, en el caso
+	 *  de los costructores, sean inicializados de diferentes
+	 *  maneras, proporcionando flexibilidad al programador
+	 *  para instanciar la clase con diferentes conjuntos de
+	 *  datos.
+	 */
+	public Atm() {
+		// ATM por defaul, Modelo: T-800, Amount: $1_000_000
+        /*
+         * Un constructor puede llamar a otro constructor
+         * de la misma clase usando la palabra reservada
+         * this. Esta llamada debe ser la primera instrucción
+         * del constructor en uso.
+         */
+		this("t-800", 1_000_00);
+		// más línea de código
 	}
 	
 	/*
