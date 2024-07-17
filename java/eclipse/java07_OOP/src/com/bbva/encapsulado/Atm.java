@@ -112,7 +112,7 @@ public class Atm {
 	}
 	
 	/**
-	 * Sobre carga de setAmoun recibiendo
+	 * Sobre carga (Method overloading) de setAmoun recibiendo
 	 * un string
 	 * 
 	 */

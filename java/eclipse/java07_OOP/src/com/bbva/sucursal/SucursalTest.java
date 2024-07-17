@@ -35,9 +35,8 @@ public class SucursalTest {
 		
 		cajeros.get(5).setAmount(2_000_000);
 		
-		String newAmount = "800000";
-		double newAmountDouble = Double.parseDouble(newAmount);
-		cajeros.get(5).setAmount( newAmountDouble );
+		cajeros.get(5).setAmount( 800000 );
+		System.out.println( cajeros.get(5).getAmount() );
 		
 	}
 
