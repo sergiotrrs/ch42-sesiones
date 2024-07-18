@@ -30,5 +30,14 @@ public class Square extends TwoDimensionalShape {
 		return super.getHeight() * 4;
 	}
 	
+	public void setSide(double side) {
+		super.setWidth(side);
+		super.setHeight(side);
+	}
+	
+	public double getSide() {
+		return super.getHeight();
+	}
+	
 	
 }
