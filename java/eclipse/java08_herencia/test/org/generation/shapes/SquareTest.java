@@ -15,10 +15,10 @@ class SquareTest {
 	@Test
 	void doubleNumberTest() {
 		Square square = new Square("Rubik", 9.9995 );
-		assertEquals( 99.99000025 , square.getArea() );
+		assertEquals( 99.99000025 , square.getArea(), 0.00000001 );
 		
 		square.setSide( 0.01 );
-		assertEquals( 0.0001 , square.getArea(), 0.00001 );
+		assertEquals( 0.0001 , square.getArea(), 0.00001, "Se agrega delta" );
 
 		square.setSide( 0.1 );
 		assertEquals( 0.01 , square.getArea(), 0.001 );
