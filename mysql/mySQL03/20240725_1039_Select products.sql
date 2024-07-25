@@ -124,4 +124,18 @@ SELECT
 
 -- Mostrar todos los productos que el precio sea mayor al promedio
 -- de los precios.
+SELECT 
+	product_id, name, price 
+    FROM products 
+    WHERE price > ( SELECT AVG(price) FROM products );
+
+/*
+ GROUP BY
+ Agrupa filas que tiene valores idénticos en una o más columnas
+ en grupos. Luego se prueden aplicar funciones agregadas
+ como SUM, AVG, CONT, MIN, MAX.
+*/
+-- El precio máx de producto POR categoría.
+SELECT * FROM products ORDER BY fk_category_id;
+SELECT fk_category_id ,MAX(price) FROM products GROUP BY fk_category_id;
 
