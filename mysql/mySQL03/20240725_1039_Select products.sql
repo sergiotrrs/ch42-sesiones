@@ -139,3 +139,49 @@ SELECT
 SELECT * FROM products ORDER BY fk_category_id;
 SELECT fk_category_id ,MAX(price) FROM products GROUP BY fk_category_id;
 
+SELECT fk_category_id, MAX(price) FROM products GROUP BY fk_category_id;
+
+/*
+Una función agregada en MySQL realiza cálculos 
+sobre un conjunto de valores y devuelve un solo valor. 
+Estas funciones se utilizan comúnmente en consultas 
+SQL para resumir datos.
+
+Algunas funciones agregadas comunes son:
+
+SUM(): Suma todos los valores de una columna.
+AVG(): Calcula el promedio de los valores de una columna.
+COUNT(): Cuenta el número de filas.
+MAX(): Encuentra el valor máximo en una columna.
+MIN(): Encuentra el valor mínimo en una columna.
+
+*/
+
+/*
+ LIKE
+ Buscar un patrón específico en una columna de texto
+  % : Representa cero, uno o más caracteres
+  _ : Representa un caracter
+*/
+
+-- Encuentra todos los productos que sean Laptop
+SELECT * FROM products WHERE name = "laptop";
+SELECT * FROM products WHERE name like "laptop%";
+SELECT * FROM products WHERE name like "%bal%";
+SELECT * FROM products WHERE name like "A%";
+
+-- Funciones fecha
+SELECT CURDATE(); -- la fecha actual
+SELECT NOW(); -- fecha y hora actual
+SELECT localtimestamp(); -- fecha y hora actual
+
+-- Fecha actual + 21 días
+SELECT date_add( NOW(), INTERVAL 21 DAY );
+
+-- Días de vida
+SELECT DATEDIFF( CURDATE(), "1983-12-08" );
+
+SELECT month("1983-12-08");
+
+
+
