@@ -67,7 +67,7 @@ public class User {
 	
 	
 	public static List<User> usersMock() {
-		List users = new ArrayList<>();
+		List<User> users = new ArrayList<>();
 		
 		users.add(new User(1, "jaqui@gmail.com", "Jaqui", "Meatballs", "https://randomuser.me/api/portraits/women/26.jpg" )  );
 		users.add(new User(2, "rubi@gmail.com", "Rubi", "Meatballs", "https://randomuser.me/api/portraits/women/27.jpg" )  );

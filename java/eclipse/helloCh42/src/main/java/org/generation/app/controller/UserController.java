@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.*;
 // @Controller
 // @ResponseBody
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = {"http://127.0.0.1:8080", "https://myapp.netlify.com"})
 public class UserController {
 
 	@GetMapping("api/v1/greeting")
