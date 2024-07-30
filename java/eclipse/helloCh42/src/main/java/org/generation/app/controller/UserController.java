@@ -4,6 +4,8 @@ package org.generation.app.controller;
 import java.util.List;
 
 import org.generation.app.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +42,10 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = {"http://127.0.0.1:8080", "https://myapp.netlify.com"})
 public class UserController {
 
+	@Autowired
+	@Qualifier("customer")
+	private User user;
+	
 	@GetMapping("api/v1/greeting")
 	String saludoCh42ApiRest() {
 		return "Qué transita por tus venas?";
@@ -47,7 +53,7 @@ public class UserController {
 	
 	@GetMapping("api/v1/users")
 	List<User> getUsers(){
-		return User.usersMock();
+		return user.usersMock();
 	}
 	
 }
