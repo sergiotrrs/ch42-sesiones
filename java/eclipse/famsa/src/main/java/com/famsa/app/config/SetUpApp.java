@@ -1,5 +1,7 @@
 package com.famsa.app.config;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,8 +32,8 @@ public class SetUpApp implements CommandLineRunner {
 				"Torres", 
 				"serch@gmail.com",
 				"888", 
-				null, 
-				null, 
+				"https://randomuser.me/api/portraits/men/55.jpg", 
+				LocalDate.of(1983, 12, 8), 
 				true
 				) );
 	
@@ -39,8 +41,8 @@ public class SetUpApp implements CommandLineRunner {
 				"Alexa",
 				"duendemalito@gmail.com",
 				"999",
-				null,
-				null,
+				"https://randomuser.me/api/portraits/women/70.jpg", 
+				LocalDate.of(2004, 1, 1), 
 				true
 				));
 		
@@ -49,8 +51,8 @@ public class SetUpApp implements CommandLineRunner {
 				"Cabrera", 
 				"marbe@gmail.com",
 				"123", 
-				null, 
-				null, 
+				"https://randomuser.me/api/portraits/women/71.jpg", 
+				LocalDate.of(2004, 1, 1), 
 				true 
 				) );
 		
@@ -59,8 +61,8 @@ public class SetUpApp implements CommandLineRunner {
 				"Gallegos", 
 				"dianagp@gmail.com",
 				"222", 
-				null, 
-				null, 
+				"https://randomuser.me/api/portraits/women/72.jpg", 
+				LocalDate.of(2004, 1, 1),  
 				true 
 				) );
 	
