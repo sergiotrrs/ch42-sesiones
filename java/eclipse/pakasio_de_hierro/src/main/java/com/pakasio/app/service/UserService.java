@@ -31,7 +31,7 @@ public interface UserService {
 	// A partir de la versión 8 de Java, se pueden tener
 	// métodos con implementaciones.
 	// Estos métodos deben ser default
-	default String grreting() {
+	default String greeting() {
 		return "Hola Grillo";
 	}
 

@@ -40,8 +40,24 @@ import com.pakasio.app.model.User;
  */
 public interface UserRepository extends CrudRepository<User, Long> {
 	
+	/*
+	 * Los query methods se refieren a métodos definidos en las 
+	 * interfaces de repositorios en Spring Data JPA (y otras 
+	 * implementaciones de Spring Data) que permiten generar 
+	 * consultas de manera automática a partir del nombre del 
+	 * método. Estos métodos siguen una convención de nombres 
+	 * específica que indica la consulta que deben ejecutar, 
+	 * evitando la necesidad de escribir manualmente consultas 
+	 * JPQL (Java Persistence Query Language) o SQL.
+	 * 
+	 * https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+	 * 
+	 */
+	
 	Optional<User> findByEmail(String email);	
 	Iterable<User> findAllByActiveTrue();
 	Iterable<User> findAllByActiveFalse();
+	boolean existsByEmail(String email);
+	
 	
 }

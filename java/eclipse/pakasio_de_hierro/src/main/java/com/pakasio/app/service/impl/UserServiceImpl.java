@@ -21,6 +21,10 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User createUser(User user) {
+		String email = user.getEmail();
+		if( userRepository.existsByEmail(email) ) {
+			throw new IllegalStateException("The email " + email + " is already registered.");
+		}
 		user.setId(null);
 		user.setActive(true);
 		User newUser = saveUser(user);
