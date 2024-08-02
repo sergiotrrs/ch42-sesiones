@@ -40,7 +40,7 @@ public class User {
 	
 	@ManyToOne
     @JoinColumn(name = "fk_role_id")
-	private Role role;
+	private Role role;	
 	
 	public User() {
 		

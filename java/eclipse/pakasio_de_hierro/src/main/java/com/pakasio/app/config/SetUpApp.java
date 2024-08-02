@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import com.pakasio.app.model.Role;
 import com.pakasio.app.model.User;
@@ -19,6 +20,7 @@ import com.pakasio.app.util.UserGenerator;
  * útil para ejecutar tareas de inicialización o configuración 
  * cuando se arranca la aplicación.
  */
+// @Profile("devH2") // Para que se active cuando se use el perfil indicado
 @Configuration
 public class SetUpApp implements CommandLineRunner {
 

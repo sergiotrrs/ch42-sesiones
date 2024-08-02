@@ -73,3 +73,33 @@ SELECT
     WHERE YEAR( purchase_date ) = 2024
     GROUP BY month
     ORDER BY month;
+    
+-- 9.- Mostrar los clientes con el total de compras que han hecho en el año 2024.
+-- Mostrar el email del cliente y el monto total de las compra que lleva en el año.
+SELECT
+	u.email,
+    SUM(purchase_sold) AS "total_purchase_sold"
+    FROM users u
+    INNER JOIN purchases pch
+    ON u.user_id = pch.fk_user_id
+    INNER JOIN purchase_has_products php
+    ON pch.purchase_id = php.purchase_id
+    WHERE YEAR( purchase_date ) = 2024
+    GROUP BY email
+    ORDER BY total_purchase_sold DESC;
+    
+-- 10.- Mostrar los clientes con el total de compras que han hecho en el año 2024.
+-- Mostrar el email del cliente y el monto total de las compra que lleva en el año.
+-- Mostrar SOLO los clientes que en su total de compra superen los $5,000
+SELECT
+	u.email,
+    SUM(purchase_sold) AS "total_purchase_sold"
+    FROM users u
+    INNER JOIN purchases pch
+    ON u.user_id = pch.fk_user_id
+    INNER JOIN purchase_has_products php
+    ON pch.purchase_id = php.purchase_id
+    WHERE YEAR( purchase_date ) = 2024
+    GROUP BY email
+    HAVING total_purchase_sold >= 5000
+    ORDER BY total_purchase_sold DESC;
