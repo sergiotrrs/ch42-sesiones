@@ -74,6 +74,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User updateUser(User newUserData, Long id) {
 		User existingUser = getUserById(id);
+		if( !existingUser.isActive() ) {
+			throw new IllegalStateException("User does not exist with id " + id);
+		}
 		return UserUpdater.updateUser(existingUser, newUserData);
 	}
 

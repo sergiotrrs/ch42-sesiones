@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import com.pakasio.app.dto.UserDto;
 import com.pakasio.app.model.User;
 import com.pakasio.app.service.UserDtoService;
-import com.pakasio.app.service.UserService;
 
 @RestController
 @RequestMapping("api/v2/users")

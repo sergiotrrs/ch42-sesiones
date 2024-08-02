@@ -1,5 +1,6 @@
 package com.pakasio.app.dto;
 
+import java.time.LocalDate;
 
 public class UserDto {
 	
@@ -11,6 +12,8 @@ public class UserDto {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String avatar;
+	private LocalDate birthdate;
 	
 	public UserDto() {}
 	
@@ -37,6 +40,18 @@ public class UserDto {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getAvatar() {
+		return avatar;
+	}
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
 	}
 
 
