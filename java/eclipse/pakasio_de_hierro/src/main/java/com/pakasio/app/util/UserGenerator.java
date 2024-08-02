@@ -33,7 +33,7 @@ public final class UserGenerator {
 		randomUser.setPassword("texas"+ number);
 		randomUser.setAvatar("https://randomuser.me/api/portraits/women/"+photoNumber+".jpg");
 		randomUser.setBirthdate( randomBirthdate());
-		randomUser.setRole( new Role(1L,"","") );
+		randomUser.setRoles( List.of( Role.setUserRole(1) ) );
 				
 		return randomUser;
 	}

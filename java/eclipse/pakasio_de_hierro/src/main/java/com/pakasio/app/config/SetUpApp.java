@@ -39,7 +39,7 @@ public class SetUpApp implements CommandLineRunner {
 	
 		roleRepository.save( new Role(1L, "CUSTOMER", "Cliente"));
 		roleRepository.save( new Role(2L, "ADMIN", "Administrador"));
-		roleRepository.save( new Role(3L, "WAREHOUSE", "Almacenista"));
+		roleRepository.save( new Role(3L, "WAREHOUSE_MANAGER", "Almacenista"));
 		
 		List<User> users = UserGenerator.generateRandomUsers(50);
 		for (User user : users) {
@@ -54,7 +54,7 @@ public class SetUpApp implements CommandLineRunner {
 				"https://randomuser.me/api/portraits/men/55.jpg", 
 				LocalDate.of(1983, 12, 8), 
 				true,
-				new Role(2L,"","")
+				List.of( Role.setUserRole(1), Role.setUserRole(2) )
 				) );
 	
 		userService.createUser(new User("Mariana",
@@ -64,7 +64,7 @@ public class SetUpApp implements CommandLineRunner {
 				"https://randomuser.me/api/portraits/women/70.jpg", 
 				LocalDate.of(2004, 1, 1), 
 				true,
-				new Role(2L,"","")
+				List.of( Role.setUserRole(1), Role.setUserRole(2) )
 				));
 		
 		userService.createUser( new User(
@@ -75,7 +75,7 @@ public class SetUpApp implements CommandLineRunner {
 				"https://randomuser.me/api/portraits/women/71.jpg", 
 				LocalDate.of(2004, 1, 1), 
 				true ,
-				new Role(3L,"","")
+				List.of( Role.setUserRole(1), Role.setUserRole(3) )
 				) );
 		
 		userService.createUser( new User(
@@ -86,7 +86,7 @@ public class SetUpApp implements CommandLineRunner {
 				"https://randomuser.me/api/portraits/women/72.jpg", 
 				LocalDate.of(2004, 1, 1),  
 				true ,
-				new Role(3L,"","")
+				List.of( Role.setUserRole(1), Role.setUserRole(3) )
 				) );
 	
 		

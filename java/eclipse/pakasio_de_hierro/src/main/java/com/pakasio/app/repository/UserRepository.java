@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 
 import com.pakasio.app.model.User;
 
@@ -56,7 +57,7 @@ public interface UserRepository extends CrudRepository<User, Long>, PagingAndSor
 	 * 
 	 */
 	
-	Optional<User> findByEmail(String email);	
+	Optional<User> findByEmail(@Param("value") String email);	
 	Iterable<User> findAllByActiveTrue();
 	Iterable<User> findAllByActiveFalse();
 	boolean existsByEmail(String email);

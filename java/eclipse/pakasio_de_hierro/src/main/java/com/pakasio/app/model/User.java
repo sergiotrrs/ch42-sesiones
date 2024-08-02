@@ -1,6 +1,7 @@
 package com.pakasio.app.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -38,16 +39,19 @@ public class User {
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
-	@ManyToOne
-    @JoinColumn(name = "fk_role_id")
-	private Role role;	
+	@ManyToMany
+	@JoinTable(
+			  name = "user_has_roles",        // nombre de la tabla puente
+			  joinColumns = @JoinColumn(name = "user_id"), // nombre del atributo
+			  inverseJoinColumns = @JoinColumn(name = "role_id")) // nombre del atributo
+	private List<Role> roles;	
 	
 	public User() {
 		
 	}
 
 	public User(String firstName, String lastName, String email, String password, String avatar, LocalDate birthdate,
-			boolean active, Role role) {
+			boolean active, List<Role> roles) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -55,7 +59,7 @@ public class User {
 		this.avatar = avatar;
 		this.birthdate = birthdate;
 		this.active = active;
-		this.role = role;
+		this.roles = roles;
 	}
 
 	public Long getId() {
@@ -122,12 +126,12 @@ public class User {
 		this.active = active;
 	}
 		
-	public Role getRole() {
-		return role;
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	@Override

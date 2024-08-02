@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="roles")
-public class Role {
-	
+@Table(name="categories")
+public class Category {
+
 	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -21,16 +21,12 @@ public class Role {
 	@Column(name="description", length=150, nullable=true)
 	private String description;
 
-	public Role() {}
-	
-	public Role(Long id, String name, String description) {
+	public Category() {}
+
+	public Category(Long id, String name, String description) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-	}
-	
-	public static Role setUserRole(int roleId) {
-		return new Role(  (long) roleId, "", "");
 	}
 
 	public Long getId() {
@@ -55,7 +51,8 @@ public class Role {
 
 	public void setDescription(String description) {
 		this.description = description;
-	} 
+	}
+	
 	
 	
 	
