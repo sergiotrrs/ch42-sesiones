@@ -38,13 +38,16 @@ public class User {
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
+	@ManyToOne
+    @JoinColumn(name = "fk_role_id")
+	private Role role;
+	
 	public User() {
 		
 	}
 
 	public User(String firstName, String lastName, String email, String password, String avatar, LocalDate birthdate,
-			boolean active) {
-		super();
+			boolean active, Role role) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -52,6 +55,7 @@ public class User {
 		this.avatar = avatar;
 		this.birthdate = birthdate;
 		this.active = active;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -116,6 +120,14 @@ public class User {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+		
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 	@Override

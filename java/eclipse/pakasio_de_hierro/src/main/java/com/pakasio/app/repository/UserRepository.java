@@ -3,6 +3,7 @@ package com.pakasio.app.repository;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.pakasio.app.model.User;
 
@@ -38,7 +39,8 @@ import com.pakasio.app.model.User;
  *  Sin embargo, si solo necesitas las operaciones CRUD básicas, 
  *  CrudRepository puede ser suficiente.
  */
-public interface UserRepository extends CrudRepository<User, Long> {
+
+public interface UserRepository extends CrudRepository<User, Long>, PagingAndSortingRepository<User, Long> {
 	
 	/*
 	 * Los query methods se refieren a métodos definidos en las 

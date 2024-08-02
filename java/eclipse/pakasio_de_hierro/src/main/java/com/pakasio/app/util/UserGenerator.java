@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pakasio.app.model.Role;
 import com.pakasio.app.model.User;
 
 public final class UserGenerator {
@@ -32,6 +33,7 @@ public final class UserGenerator {
 		randomUser.setPassword("texas"+ number);
 		randomUser.setAvatar("https://randomuser.me/api/portraits/women/"+photoNumber+".jpg");
 		randomUser.setBirthdate( randomBirthdate());
+		randomUser.setRole( new Role(1L,"","") );
 				
 		return randomUser;
 	}
