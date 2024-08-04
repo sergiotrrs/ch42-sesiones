@@ -22,6 +22,9 @@ public class Product {
 	@Column(name="name", length=100, nullable=false)
 	private String name;
 	
+	@Column(name = "image", length=150, nullable=true)	
+	private String image;	
+	
 	@Column(name = "price", precision=7, scale=2)	
 	private BigDecimal price;
 	
@@ -31,8 +34,9 @@ public class Product {
 
 	public Product() {}
 	
-	public Product( String name, BigDecimal price, Category category) {
+	public Product( String name, String image, BigDecimal price, Category category) {
 		this.name = name;
+		this.image = image;
 		this.price = price;
 		this.category = category;
 	}
@@ -51,6 +55,14 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public BigDecimal getPrice() {

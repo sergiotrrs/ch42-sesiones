@@ -1,8 +1,10 @@
 package com.pakasio.app.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pakasio.app.model.composite_key.PurchaseProductKey;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
@@ -14,12 +16,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="purchase_has_products")
-public class PurchaseHasProducts {
+public class PurchaseHasProducts implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
 	private PurchaseProductKey id;
 	
-
 	@ManyToOne
 	@MapsId("purchaseId")
     @JoinColumn(name = "purchase_id")
@@ -39,9 +42,9 @@ public class PurchaseHasProducts {
 
 	public PurchaseHasProducts() {}
 	
-	public PurchaseHasProducts(Purchase purchase, Product product, int quantity,
-			BigDecimal purchaseSold) {
-
+	public PurchaseHasProducts(PurchaseProductKey id , Purchase purchase,
+			Product product, int quantity, BigDecimal purchaseSold) {
+		this.id = id;
 		this.purchase = purchase;
 		this.product = product;
 		this.quantity = quantity;

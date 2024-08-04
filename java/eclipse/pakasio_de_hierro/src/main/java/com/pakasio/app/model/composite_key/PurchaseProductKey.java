@@ -1,4 +1,4 @@
-package com.pakasio.app.model;
+package com.pakasio.app.model.composite_key;
 
 import java.io.Serializable;
 

@@ -23,7 +23,7 @@ public class Purchase {
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_user_id")
-	@JsonIgnoreProperties({"firstName","lastName", "password","birthdate", "avatar","active","role"})
+	@JsonIgnoreProperties({"firstName","lastName", "password","birthdate", "avatar","active","roles"})
 	private User user;
 	
 	@Column(name="purchase_date")
@@ -31,8 +31,7 @@ public class Purchase {
 
 	public Purchase() {}
 	
-	public Purchase(Long id, User user, LocalDateTime purchaseDate) {
-		this.id = id;
+	public Purchase(User user, LocalDateTime purchaseDate) {
 		this.user = user;
 		this.purchaseDate = purchaseDate;
 	}

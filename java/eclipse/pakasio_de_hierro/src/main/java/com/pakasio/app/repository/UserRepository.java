@@ -57,10 +57,11 @@ public interface UserRepository extends CrudRepository<User, Long>, PagingAndSor
 	 * 
 	 */
 	
-	Optional<User> findByEmail(@Param("value") String email);	
+	Optional<User> findByEmail(@Param("email") String email);	
+	Iterable<User> findByEmailContaining(@Param("email") String email);	
 	Iterable<User> findAllByActiveTrue();
 	Iterable<User> findAllByActiveFalse();
-	boolean existsByEmail(String email);
+	boolean existsByEmail(@Param("email") String email);
 	
 	
 }
