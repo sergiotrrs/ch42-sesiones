@@ -20,14 +20,36 @@ public class PurchaseHasProducts implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * La anotación @EmbeddedId en JPA se utiliza para definir 
+	 * una clave primaria compuesta utilizando una clase embebida.
+	 */
 	@EmbeddedId
 	private PurchaseProductKey id;
 	
+	/**
+	 * @MapsId mapear una relación de entidad a una clave primaria 
+	 * compuesta cuando una de las partes de la clave primaria es 
+	 * también una clave foránea.
+	 * 
+	 * @JoinColumn se utiliza para especificar la columna de la 
+	 * base de datos que se utilizará para la unión en una relación 
+	 * de entidades. 
+	 *   name: El nombre de la columna en la base de datos.
+	 * Se utiliza en relaciones como @ManyToOne, @OneToMany, 
+	 * @OneToOne, y @ManyToMany.
+	 */
 	@ManyToOne
 	@MapsId("purchaseId")
     @JoinColumn(name = "purchase_id")
 	private Purchase purchase;
 	
+	/**
+	 * @JsonIgnoreProperties evitar la serialización o deserialización 
+	 * de ciertas propiedades de un objeto cuando se trabaja con JSON.
+	 * Es posible omitir varios campos ej. 
+	 * 	@JsonIgnoreProperties({"description", "category"})
+	 */
 	@ManyToOne
 	@MapsId("productId")
     @JoinColumn(name = "product_id")

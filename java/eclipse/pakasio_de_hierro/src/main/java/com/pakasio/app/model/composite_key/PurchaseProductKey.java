@@ -7,6 +7,17 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+/**
+ *  La anotación @Embeddable en JPA se utiliza para marcar 
+ *  una clase como un objeto embebido. Esto significa que la 
+ *  clase no tiene su propia tabla en la base de datos, sino 
+ *  que sus campos se incorporan como columnas en la tabla de 
+ *  la entidad que lo contiene. 
+ *  
+ *  La clase embebida debe tener un constructor sin argumentos
+ *  e implementar la interfaz Serializable.
+ */
+
 @Component
 @Embeddable
 public class PurchaseProductKey implements Serializable {
