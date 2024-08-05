@@ -3,6 +3,8 @@ package com.pakasio.app.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.pakasio.app.model.Product;
 
 /**
@@ -13,6 +15,7 @@ import com.pakasio.app.model.Product;
  * especialmente útil en prototipos y aplicaciones donde 
  * las operaciones CRUD estándar son suficientes.
  */
+@CrossOrigin
 public interface ProductRepository extends CrudRepository<Product, Long>, PagingAndSortingRepository<Product, Long> {
 	
 

@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 import com.pakasio.app.model.Category;
 import com.pakasio.app.model.Product;
@@ -22,6 +21,7 @@ import com.pakasio.app.repository.PurchaseHasProductsRepository;
 import com.pakasio.app.repository.PurchaseRepository;
 import com.pakasio.app.repository.RoleRepository;
 import com.pakasio.app.service.UserService;
+import com.pakasio.app.util.ProductGenerator;
 import com.pakasio.app.util.UserGenerator;
 
 /**
@@ -69,6 +69,11 @@ public class SetUpApp implements CommandLineRunner {
 		categoryRepository.save( new Category("Línea Blanca", "Lavadoras, Refrigeradores"));
 		
 		// Generación de productos
+		List<Product> products = ProductGenerator.generateRandomProducts(30, juguete.getId());
+		for (Product product : products) {
+			productRepository.save(product);
+		}
+		
 		Product legoChef = productRepository.save( new Product(
 				"Lego Chef", 
 				"https://randomuser.me/api/portraits/lego/8.jpg", 

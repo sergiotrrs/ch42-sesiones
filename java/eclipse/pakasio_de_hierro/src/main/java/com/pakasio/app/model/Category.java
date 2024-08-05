@@ -27,6 +27,15 @@ public class Category {
 		this.name = name;
 		this.description = description;
 	}
+	
+	public static Category setProductCategory(Long categoryId) {
+		Category category = new Category( "", "");
+		category.setId(categoryId);
+		return category;
+	}
+	public static Category setProductCategory(int categoryId) {
+		return setProductCategory( (long)categoryId );
+	}
 
 	public Long getId() {
 		return id;

@@ -2,6 +2,7 @@ package com.pakasio.app.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.pakasio.app.model.Role;
 /**
@@ -12,6 +13,7 @@ import com.pakasio.app.model.Role;
  *    utilizará en las respuestas JSON y en los enlaces HATEOAS. 
  * - path: Define la ruta de acceso bajo la cual el recurso estará disponible. 
  */
+@CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "roles", path = "roles")
 public interface RoleRepository extends CrudRepository<Role, Long> {
 
