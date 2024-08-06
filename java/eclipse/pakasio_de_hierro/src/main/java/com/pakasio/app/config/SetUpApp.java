@@ -32,7 +32,7 @@ import com.pakasio.app.util.UserGenerator;
  * cuando se arranca la aplicación.
  */
 // @Profile("devH2") // Para que se active cuando se use el perfil indicado
-@Configuration
+// @Configuration
 public class SetUpApp implements CommandLineRunner {
 
 	CategoryRepository categoryRepository;
