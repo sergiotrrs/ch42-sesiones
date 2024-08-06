@@ -51,6 +51,7 @@ public class TokenUtils {
 	}
 	
 	// STEP 8.2 Verificar el token
+	@SuppressWarnings("unchecked")
 	public static UsernamePasswordAuthenticationToken getAuthentication(String token) {
 		
 		UsernamePasswordAuthenticationToken userAuth;

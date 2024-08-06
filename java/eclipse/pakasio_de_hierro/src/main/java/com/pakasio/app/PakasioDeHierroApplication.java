@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class PakasioApplication {
+public class PakasioDeHierroApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PakasioApplication.class, args);
+		SpringApplication.run(PakasioDeHierroApplication.class, args);
 	}
 
 	

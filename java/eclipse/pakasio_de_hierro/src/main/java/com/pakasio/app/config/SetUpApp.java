@@ -163,7 +163,7 @@ public class SetUpApp implements CommandLineRunner {
 				compra01, 
 				sombrero, 
 				2,
-				sombrero.getPrice().multiply( BigDecimal.TWO ) // precio * 2
+				sombrero.getPrice().multiply( BigDecimal.valueOf(2) ) // precio * 2
 				) );
 		
 		PurchaseProductKey ppkey01Chef = new PurchaseProductKey(compra01.getId(), legoChef.getId());
@@ -172,7 +172,7 @@ public class SetUpApp implements CommandLineRunner {
 				compra01, 
 				legoChef, 
 				2,
-				legoChef.getPrice().multiply( BigDecimal.TWO ) // precio * 2
+				legoChef.getPrice().multiply( BigDecimal.valueOf(2) ) // precio * 2
 				) );
 		
 		PurchaseProductKey ppkey01Charro = new PurchaseProductKey(compra01.getId(), legoCharro.getId());
@@ -190,7 +190,7 @@ public class SetUpApp implements CommandLineRunner {
 				compra02, 
 				sombrero, 
 				2,
-				sombrero.getPrice().multiply( BigDecimal.TWO ) 
+				sombrero.getPrice().multiply( BigDecimal.valueOf(2) ) 
 				) );
 		
 		PurchaseProductKey ppkey02Charro = new PurchaseProductKey(compra02.getId(), legoCharro.getId());
