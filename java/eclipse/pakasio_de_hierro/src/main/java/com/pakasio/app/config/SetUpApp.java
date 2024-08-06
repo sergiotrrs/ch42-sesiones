@@ -110,7 +110,7 @@ public class SetUpApp implements CommandLineRunner {
 				LocalDate.of(1983, 12, 8), 
 				true,
 				// Se agregan objetos de tipo Customer
-				List.of( admin ) 
+				List.of( customer ) 
 				) );
 	
 		User mariana = userService.createUser(new User("Mariana",

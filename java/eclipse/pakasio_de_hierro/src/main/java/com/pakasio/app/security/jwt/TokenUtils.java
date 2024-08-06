@@ -22,9 +22,9 @@ import io.jsonwebtoken.security.Keys;
 
 public class TokenUtils {
 	
-	@Value("${jwt.secret}")
-	private static String ACCESS_TOKEN_SECRET;
-	private static long ACCESS_TOKEN_VALID_SECONDS = 900L;
+
+	private static String ACCESS_TOKEN_SECRET = "wB5MLEo14fcgIwPJh9T2XKOIZP58RjTaFLT2fxdP2QE2";
+	private static long ACCESS_TOKEN_VALID_SECONDS = 300L;
 	
 	// STEP 7.3 Creación del token JWT
 	public static String createToken(

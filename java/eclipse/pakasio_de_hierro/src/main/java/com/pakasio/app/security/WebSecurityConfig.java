@@ -17,6 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 // import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -111,14 +112,14 @@ public class WebSecurityConfig {
 				.authorizeHttpRequests( authorize -> authorize
 						.requestMatchers("/", "index.html", "/assets/**","/img/**", "/src/**").permitAll()
 						.requestMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
-						.requestMatchers(HttpMethod.GET, "/api/v3/products","/api/v3/products/**").permitAll()
+						.requestMatchers(HttpMethod.GET, "/api/v3/products/**").permitAll()
 						.requestMatchers(HttpMethod.PUT, "/api/v3/products","/api/v3/products/**","/api/v3/categories/**").hasRole("WAREHOUSE_MANAGER")
-						.requestMatchers("/api/v1/users/", "/api/v3/roles/**", "/api/v3/products/**", "/api/v3/purchases/**").hasRole("ADMIN")
-						.requestMatchers("/api/v1/users/**",
-										"/api/v1/purchases/**",
-										"/api/v1/order-has-products/**"
-								).hasAnyRole("ADMIN","CUSTOMER")
-						.anyRequest().authenticated()						
+						.requestMatchers(HttpMethod.GET, "/api/v1/users").hasAnyRole("ADMIN")						
+						.requestMatchers(HttpMethod.GET, "/api/v1/users/{id}").hasAnyRole("ADMIN","CUSTOMER")						
+						.requestMatchers(HttpMethod.POST, "/api/v1/users/{id}").hasAnyRole("ADMIN","CUSTOMER")						
+						.requestMatchers(HttpMethod.DELETE, "/api/v1/users/{id}").hasAnyRole("ADMIN","CUSTOMER")						
+						.requestMatchers("/api/v3/roles/**", "/api/v3/products/**", "/api/v3/purchases/**", "/api/v1/order-has-products/**").hasRole("ADMIN")
+						.anyRequest().denyAll()						
 						)
 				// STEP 7: Agregamos el filtro de autenticación del login
 				// interceptar las solicitudes de autenticación 
