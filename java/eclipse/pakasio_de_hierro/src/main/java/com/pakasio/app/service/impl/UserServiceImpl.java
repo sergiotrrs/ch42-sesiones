@@ -2,6 +2,7 @@ package com.pakasio.app.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pakasio.app.model.User;
@@ -14,9 +15,11 @@ import com.pakasio.app.util.UserUpdater;
 public class UserServiceImpl implements UserService {
 	
 	UserRepository userRepository;
+	PasswordEncoder passwordEncoder;
 	
-	public UserServiceImpl(UserRepository userRepository) {
+	public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 	
 	@Override
@@ -27,6 +30,7 @@ public class UserServiceImpl implements UserService {
 		}
 		user.setId(null);
 		user.setActive(true);
+		user.setPassword( passwordEncoder.encode( user.getPassword() ));
 		User newUser = saveUser(user);
 		return newUser;
 	}

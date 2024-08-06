@@ -39,7 +39,7 @@ public class User {
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			  name = "user_has_roles",        // nombre de la tabla puente
 			  joinColumns = @JoinColumn(name = "user_id"), // nombre del atributo
