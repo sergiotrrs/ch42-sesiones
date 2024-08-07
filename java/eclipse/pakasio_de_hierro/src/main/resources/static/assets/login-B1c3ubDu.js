@@ -1,0 +1,1 @@
+import{n as o}from"./navbar-app-DRu8yxQW.js";document.querySelector("#navbar-app").innerHTML=o();const r=document.forms.loginForm;r.addEventListener("submit",async n=>{n.preventDefault();const e={role:"admin",isAdmin:!0,expiration:0};localStorage.setItem("userSesion",JSON.stringify(e)),window.location.href="/src/pages/admin/admin.html"});
