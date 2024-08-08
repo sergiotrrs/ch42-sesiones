@@ -254,11 +254,14 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Esponja\",\n    \"email\": \"bob@nickelodeon.com\",\n    \"password\": \"cangreburger\",\n    \"avatar\": \"https://randomuser.me/api/portraits/women/51.jpg\",\n    \"birthdate\": \"1973-09-08\",\n    \"roles\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 3\n        }\n    ]\n}",
+									"raw": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Esponja\",\n    \"email\": \"sponge@nickelodeon.com\",\n    \"password\": \"cangreburguer\",\n    \"avatar\": \"https://randomuser.me/api/portraits/women/51.jpg\",\n    \"birthdate\": \"1973-09-08\",\n    \"roles\": null\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -298,6 +301,16 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZXJjaEBnbWFpbC5jb20iLCJleHAiOjE3MjI5MzkyNDMsIm5hbWUiOiJzZXJjaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9DVVNUT01FUiJ9XX0.V-ujaBQlg7rH-BTpc02cbAWD4czXnmFtHCNhQ5pgfa4",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -428,6 +441,52 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"firstName\": \"Patricio\",\n    \"lastName\": \"Estrella\",\n    \"email\": \"patricio@nickelodeon.com\",\n    \"password\": \"cangreburger\",\n    \"avatar\": \"https://randomuser.me/api/portraits/women/51.jpg\",\n    \"birthdate\": \"1973-09-08\"\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1"
+									]
+								},
+								"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Successful PUT request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Patricio\",\n    \"lastName\": \"Estrella\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -707,6 +766,69 @@
 									]
 								},
 								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"email\": \"duende@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"email\": \"serch@gmail.com\",\r\n    \"password\": \"888\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
 							},
 							"response": []
 						}
@@ -1214,6 +1336,111 @@
 									]
 								},
 								"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "All products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZXJjaEBnbWFpbC5jb20iLCJleHAiOjE3MjI5ODE3MzIsIm5hbWUiOiJzZXJjaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9DVVNUT01FUiJ9XX0.BQvWccijSQrX70no0NhAIAdr9mjsSiA-oibAEODAkMg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v3/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v3",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "All Roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZXJjaEBnbWFpbC5jb20iLCJleHAiOjE3MjI5MzMzMjQsIm5hbWUiOiJzZXJjaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9DVVNUT01FUiJ9XX0.3UKj8sGkMvu1qj7omKaxB6pV-RNQKQgjmSXnRqNkCGI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v3/roles",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v3",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "All Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdWVuZGVtYWxpdG9AZ21haWwuY29tIiwiZXhwIjoxNzIyOTM0ODEwLCJuYW1lIjoiZHVlbmRlbWFsaXRvQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0NVU1RPTUVSIn0seyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.P-7RMketMiSF_7vrTyAnCI6ig2OtrrTFXfNiWz-xVTI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v3/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v3",
+										"categories"
+									]
+								}
 							},
 							"response": []
 						}
