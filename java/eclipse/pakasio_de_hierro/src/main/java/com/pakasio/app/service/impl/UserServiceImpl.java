@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.pakasio.app.model.User;
 import com.pakasio.app.repository.UserRepository;
 import com.pakasio.app.service.UserService;
+import com.pakasio.app.util.PasswordUtils;
 import com.pakasio.app.util.UserUpdater;
 // Las interfaces se implementan
 // Es posible tener una herencia(extends) y varias implementaciones
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService {
 			throw new IllegalStateException("The email " + email + " is already registered.");
 		}
 		user.setId(null);
+		user.setPassword( PasswordUtils.encryptPassword(user.getPassword()));
 		user.setActive(true);
 		User newUser = saveUser(user);
 		return newUser;
