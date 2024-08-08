@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pakasio.app.rest.UserRestTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-08T16:08:18" hostname="T3554" time="0.823">
+  <properties/>
+  <testcase name="postUser()" classname="com.pakasio.app.rest.UserRestTest" time="0.823"/>
+  <system-out><![CDATA[2024-08-08T10:08:15.553-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pakasio.app.rest.UserRestTest]: UserRestTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-08T10:08:15.597-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pakasio.app.PakasioApplication for test class com.pakasio.app.rest.UserRestTest
+ ,-----.,--.        ,---. ,---.  
+'  .--./|  ,---.   /    |'.-.  \ 
+|  |    |  .-.  | /  '  | .-' .' 
+'  '--'\|  | |  | '--|  |/   '-. 
+ `-----'`--' `--'    `--''-----' 
+ pakasio_de_hierro
+          -- By Duende Malito --
+2024-08-08T10:08:15.684-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.pakasio.app.rest.UserRestTest        : Starting UserRestTest using Java 17.0.8 with PID 7728 (started by TuX3 in C:\generation\ch42\sesiones\ch42-sesiones\java\eclipse\pakasio_de_hierro)
+2024-08-08T10:08:15.686-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.pakasio.app.rest.UserRestTest        : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T10:08:16.313-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-08T10:08:16.362-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2024-08-08T10:08:16.662-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-08T10:08:16.667-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:00761fdb-1265-4c95-a6cb-a1fbe7f4ba45 user=SA
+2024-08-08T10:08:16.667-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-08T10:08:16.671-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-08T10:08:16.696-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-08T10:08:16.743-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-08T10:08:16.897-06:00  WARN 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.pakasio.app.model.composite_key.PurchaseProductKey
+2024-08-08T10:08:16.897-06:00  WARN 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.pakasio.app.model.composite_key.PurchaseProductKey
+2024-08-08T10:08:17.220-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-08T10:08:17.220-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists categories cascade 
+2024-08-08T10:08:17.221-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists products cascade 
+2024-08-08T10:08:17.222-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists purchase_has_products cascade 
+2024-08-08T10:08:17.223-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists purchases cascade 
+2024-08-08T10:08:17.223-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists roles cascade 
+2024-08-08T10:08:17.224-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists user_has_roles cascade 
+2024-08-08T10:08:17.225-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists users cascade 
+2024-08-08T10:08:17.226-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table categories (
+        id bigint generated by default as identity,
+        name varchar(45) not null,
+        description varchar(150),
+        primary key (id)
+    )
+2024-08-08T10:08:17.232-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table products (
+        price numeric(7,2),
+        fk_category_id bigint,
+        id bigint generated by default as identity,
+        name varchar(100) not null,
+        image varchar(150),
+        primary key (id)
+    )
+2024-08-08T10:08:17.236-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table purchase_has_products (
+        purchase_sold numeric(7,2),
+        quantity integer,
+        product_id bigint not null,
+        purchase_id bigint not null,
+        primary key (product_id, purchase_id)
+    )
+2024-08-08T10:08:17.240-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table purchases (
+        fk_user_id bigint,
+        id bigint generated by default as identity,
+        purchase_date timestamp(6),
+        primary key (id)
+    )
+2024-08-08T10:08:17.244-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table roles (
+        id bigint generated by default as identity,
+        name varchar(45) not null,
+        description varchar(150),
+        primary key (id)
+    )
+2024-08-08T10:08:17.248-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table user_has_roles (
+        role_id bigint not null,
+        user_id bigint not null
+    )
+2024-08-08T10:08:17.254-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    create table users (
+        active boolean not null,
+        birthdate date,
+        id bigint generated by default as identity,
+        email varchar(50) not null unique,
+        firstname varchar(100) not null,
+        lastname varchar(100),
+        password varchar(100) not null,
+        avatar varchar(150),
+        primary key (id)
+    )
+2024-08-08T10:08:17.258-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists products 
+       add constraint FKcevve1aagnvhm9ini3lom9lc3 
+       foreign key (fk_category_id) 
+       references categories
+2024-08-08T10:08:17.263-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists purchase_has_products 
+       add constraint FKeuv55je66wk1qy9imq95rmnu2 
+       foreign key (product_id) 
+       references products
+2024-08-08T10:08:17.266-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists purchase_has_products 
+       add constraint FKhbtxoxjt5d5296ci37qd54oma 
+       foreign key (purchase_id) 
+       references purchases
+2024-08-08T10:08:17.270-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       add constraint FKsvx8qqljopxqskgmuwff7schm 
+       foreign key (fk_user_id) 
+       references users
+2024-08-08T10:08:17.274-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists user_has_roles 
+       add constraint FK6pf0mfsiq1svs4pwgxgvf0wyl 
+       foreign key (role_id) 
+       references roles
+2024-08-08T10:08:17.277-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists user_has_roles 
+       add constraint FKtllbj605lwixu0ty2y8h3baq4 
+       foreign key (user_id) 
+       references users
+2024-08-08T10:08:17.284-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO roles(id, name, description) VALUES (1,'CUSTOMER', 'Cliente de la ecommerce')
+2024-08-08T10:08:17.286-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO roles(id, name, description) VALUES (2,'ADMIN', 'Administrador de la ecommerce')
+2024-08-08T10:08:17.287-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO roles(id, name, description) VALUES (3,'WAREHOUSE_MANAGER', 'Administrador del almacen')
+2024-08-08T10:08:17.288-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO users(firstname, lastname, email, password, avatar, active) VALUES ('Duende', 'Malito', 'duende@gmail.com', '$2a$10$Ulquu8HMe6Nzfq6h.iz4hOIndHXDr86qDLaT7GYItibzxnyaEPtPG', 'https://randomuser.me/api/portraits/lego/1.jpg', 1)
+2024-08-08T10:08:17.290-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO user_has_roles(user_id, role_id) VALUES (1, 1)
+2024-08-08T10:08:17.291-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : INSERT INTO user_has_roles(user_id, role_id) VALUES (1, 2)
+2024-08-08T10:08:17.293-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-08T10:08:17.573-06:00  WARN 7728 --- [pakasio_de_hierro] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-08T10:08:17.759-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-08-08T10:08:18.134-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-08T10:08:18.135-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-08T10:08:18.142-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-08-08T10:08:18.163-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] com.pakasio.app.rest.UserRestTest        : Started UserRestTest in 2.557 seconds (process running for 16.871)
+2024-08-08T10:08:18.523-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2024-08-08T10:08:18.525-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [bob@nickelodeon.com]
+2024-08-08T10:08:18.525-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-08T10:08:18.758-06:00 DEBUG 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (active, avatar, birthdate, email, firstname, lastname, password, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2024-08-08T10:08:18.759-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-08T10:08:18.760-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [https://randomuser.me/api/portraits/women/51.jp]
+2024-08-08T10:08:18.760-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:DATE) <- [1973-09-08]
+2024-08-08T10:08:18.761-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [bob@nickelodeon.com]
+2024-08-08T10:08:18.761-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [Bob]
+2024-08-08T10:08:18.761-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (6:VARCHAR) <- [Esponja]
+2024-08-08T10:08:18.762-06:00 TRACE 7728 --- [pakasio_de_hierro] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (7:VARCHAR) <- [$2a$10$N19tiv1nnutjQxHZrBBaEOj/Uf/G4GxBSD8BA33c9UbRgO2349WXu]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/users
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"201"]
+             Body = {"firstName": "Bob","lastName": "Esponja","email": "bob@nickelodeon.com","password": "Cangreburguer","avatar": "https://randomuser.me/api/portraits/women/51.jp","birthdate": "1973-09-08","roles": null}
+    Session Attrs = {}
+
+Handler:
+             Type = com.pakasio.app.controller.UserController
+           Method = com.pakasio.app.controller.UserController#createUser(User)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":2,"firstName":"Bob","lastName":"Esponja","email":"bob@nickelodeon.com","password":"$2a$10$N19tiv1nnutjQxHZrBBaEOj/Uf/G4GxBSD8BA33c9UbRgO2349WXu","avatar":"https://randomuser.me/api/portraits/women/51.jp","birthdate":"1973-09-08","active":true,"roles":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+ID del usuario creado: 2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

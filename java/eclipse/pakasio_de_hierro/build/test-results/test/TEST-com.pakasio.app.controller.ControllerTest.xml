@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pakasio.app.controller.ControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-08T16:08:19" hostname="T3554" time="0.007">
+  <properties/>
+  <testcase name="Verifica que los controladores no sean nulos y se carguen en en contexto de Spring" classname="com.pakasio.app.controller.ControllerTest" time="0.007"/>
+  <system-out><![CDATA[2024-08-08T10:08:19.000-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pakasio.app.controller.ControllerTest]: ControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-08T10:08:19.016-06:00  INFO 7728 --- [pakasio_de_hierro] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pakasio.app.PakasioApplication for test class com.pakasio.app.controller.ControllerTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
